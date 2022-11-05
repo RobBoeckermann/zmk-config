@@ -51,7 +51,7 @@
                         label = "PASTE";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&ht_paste>, <&LA(LS(LC(V)))>;
+                        bindings = <&ht_paste>, <&kp LA(LS(LC(V)))>;
                 };
         };
 
