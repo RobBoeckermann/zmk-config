@@ -15,13 +15,43 @@
 
 / {
         behaviors {
+                //https://zmk.dev/docs/behaviors/hold-tap
+                ht_copy: copy_cut {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "COPY_CUT";
+                        #binding-cells = <2>;
+                        tapping_term_ms = <200>;
+                        quick_tap_ms = <-1>;
+                        flavor = "tap-preferred";
+                        bindings = <&kp LC(C)>, <&kp LC(X)>;
+                };
+                ht_paste: paste_clipboard {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "PASTE_CLIPBOARD";
+                        #binding-cells = <2>;
+                        tapping_term_ms = <200>;
+                        quick_tap_ms = <-1>;
+                        flavor = "tap-preferred";
+                        bindings = <&kp LC(V)>, <&kp LC(LS(V))>;
+                };
+                ht_close_tab: close_tab_reopen_tab {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "CLOSE_TAB_REOPEN_TAB";
+                        #binding-cells = <2>;
+                        tapping_term_ms = <200>;
+                        quick_tap_ms = <-1>;
+                        flavor = "tap-preferred";
+                        bindings = <&kp LC(W)>, <&kp LC(LS(T))>;
+                };
+
                 //https://zmk.dev/docs/behaviors/tap-dance
-                td0: tap_dance_0 {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_0";
-                #binding-cells = <0>;
-                tapping-term-ms = <200>;
-                bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+                td_paste: paste {
+                        //single tap = paste, hold = clipboard history, double tap = paste without formatting
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "PASTE";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&ht_paste>, <&LA(LS(LC(V)))>;
                 };
         };
 
@@ -52,6 +82,19 @@
 &trans  &kp LS(Y)       &kp LS(I)       &kp LS(E)       &kp LS(A)       &kp AT                  &kp LS(D)       &kp LS(S)       &kp LS(T)       &kp LS(N)       &kp LS(B)       &trans
 &trans  &kp LS(J)       &kp QMARK       &kp EXCL        &kp LS(K)       &kp GRAVE               &kp LS(W)       &kp LS(M)       &kp LS(L)       &kp LS(P)       &kp LS(V)       &trans
                                         &trans          &trans          &trans                  &trans          &trans          &trans
+                        >;
+                };
+                l_function {
+// -----------------------------------------------------------------------------------------
+// |    |               |       |CLOSE TAB              |NEW TAB        |SAVE   |               |F10|F7 |F8 |F9 |   |   |
+// |    |LINE COMMENT   |UNDO   |COPY                   |PASTE          |REDO   |               |F11|   |F1 |F2 |F3 |   |
+// |    |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |       |               |F12|F4 |F5 |F6 |   |   |
+//                              |                       |               |       |               |   |   |   |
+                        bindings = <
+&trans  &trans          &trans          &ht_close_tab   &kp LC(T)       &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
+&trans  &kp LC(SLASH)   &kp LC(Z)       &ht_copy        &td_paste       &kp LC(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
+&trans  &kp LA(LS(A))   &kp LC(F)       &LC(LS(F))      &trans          &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
+                                        &trans          &trans          &trans                  &trans  &trans  &trans
                         >;
                 };
                 l_bluetooth {
