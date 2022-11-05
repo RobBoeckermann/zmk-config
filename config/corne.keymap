@@ -99,7 +99,7 @@
                         bindings = <
 &trans  &trans          &trans          &ht_close_tab   &kp LC(T)       &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
 &trans  &kp LC(SLASH)   &kp LC(Z)       &ht_copy        &td_paste       &kp LC(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
-&trans  &kp LA(LS(A))   &kp LC(F)       &LC(LS(F))      &trans          &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
+&trans  &kp LA(LS(A))   &kp LC(F)       &kp LC(LS(F))   &trans          &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
                                         &trans          &trans          &trans                  &trans  &trans  &trans
                         >;
                 };
