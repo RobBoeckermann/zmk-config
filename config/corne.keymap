@@ -22,24 +22,35 @@
 / {
         behaviors {
                 //https://zmk.dev/docs/behaviors/hold-tap
-                ht_copy: copy_cut {
+                ht: hold_tap {
                         compatible = "zmk,behavior-hold-tap";
-                        label = "COPY_CUT";
+                        label = "HOLD_TAP";
                         #binding-cells = <2>;
                         tapping_term_ms = <200>;
                         quick_tap_ms = <0>;
                         flavor = "tap-preferred";
-                        bindings = <&kp LC(C)>, <&kp LC(X)>;
+                        bindings = <&kp>, <&kp>;
+                        //'bindings = < &foo &bar ... >;', not 'bindings = < &kp 0x1070006 >, < &kp 0x107001b >;'
                 };
-                ht_paste: paste_clipboard {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "PASTE_CLIPBOARD";
-                        #binding-cells = <2>;
-                        tapping_term_ms = <200>;
-                        quick_tap_ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&kp LC(V)>, <&kp LC(LS(V))>;
-                };
+                //ht_copy: copy_cut {
+                //        compatible = "zmk,behavior-hold-tap";
+                //        label = "COPY_CUT";
+                //        #binding-cells = <2>;
+                //        tapping_term_ms = <200>;
+                //        quick_tap_ms = <0>;
+                //        flavor = "tap-preferred";
+                //        bindings = <&kp LC(C)>, <&kp LC(X)>;
+                //        //'bindings = < &foo &bar ... >;', not 'bindings = < &kp 0x1070006 >, < &kp 0x107001b >;'
+                //};
+                //ht_paste: paste_clipboard {
+                //        compatible = "zmk,behavior-hold-tap";
+                //        label = "PASTE_CLIPBOARD";
+                //        #binding-cells = <2>;
+                //        tapping_term_ms = <200>;
+                //        quick_tap_ms = <0>;
+                //        flavor = "tap-preferred";
+                //        bindings = <&kp LC(V)>, <&kp LC(LS(V))>;
+                //};
                 ht_close_tab: close_tab_reopen_tab {
                         compatible = "zmk,behavior-hold-tap";
                         label = "CLOSE_TAB_REOPEN_TAB";
@@ -97,10 +108,10 @@
 // |    |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |       |               |F12|F4 |F5 |F6 |   |   |
 //                              |                       |               |       |               |   |   |   |
                         bindings = <
-&trans  &trans          &trans          &ht_close_tab   &kp LC(T)       &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
-&trans  &kp LC(SLASH)   &kp LC(Z)       &ht_copy        &td_paste       &kp LC(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
-&trans  &kp LA(LS(A))   &kp LC(F)       &kp LC(LS(F))   &trans          &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
-                                        &trans          &trans          &trans                  &trans  &trans  &trans
+&trans  &trans          &trans          &ht_close_tab   &kp LC(T)               &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
+&trans  &kp LC(SLASH)   &kp LC(Z)       &ht LC(C) LC(X) &ht LC(V) LC(LS(V))     &kp LC(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
+&trans  &kp LA(LS(A))   &kp LC(F)       &kp LC(LS(F))   &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
+                                        &trans          &trans                  &trans                  &trans  &trans  &trans
                         >;
                 };
                 l_arrows {
