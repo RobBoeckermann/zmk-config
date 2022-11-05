@@ -9,6 +9,12 @@
 #include <dt-bindings/zmk/bt.h> //https://zmk.dev/docs/behaviors/bluetooth
 #include <dt-bindings/zmk/ext_power.h> //https://zmk.dev/docs/behaviors/power
 
+#DEFINE l_default 0
+#DEFINE l_shift 1
+#DEFINE l_function 2
+#DEFINE l_arrows 3
+#DEFINE l_bluetooth 4
+
 &mt {
     tapping-term-ms = <200>; //default: 200
 };
@@ -67,7 +73,7 @@
                         bindings = <
 &kp ESC         &kp Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C           &kp R           &kp F   &kp Z   &ext_power EP_TOG
 &kp MINUS       &kp Y   &mt LSHFT I     &mt LCTRL E             &mt LALT A              &kp PERIOD                      &kp D           &kp S           &kp T           &kp N   &kp B   &kp SEMICOLON
-&kp LGUI        &kp J   &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M           &kp L           &kp P   &kp V   &xp X
+&kp LGUI        &kp J   &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M           &kp L           &kp P   &kp V   &mo l_bluetooth
                                         &lt l_function ENTER    &lt l_shift BACKSPACE   &lt l_arrows TAB                &kp DELETE      &kp SPACE       &kp ENTER
                         >;
                 };
