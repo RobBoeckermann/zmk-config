@@ -5,28 +5,70 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h> //https://zmk.dev/docs/codes
+#include <dt-bindings/zmk/bt.h> //https://zmk.dev/docs/behaviors/bluetooth
+#include <dt-bindings/zmk/ext_power.h> //https://zmk.dev/docs/behaviors/power
+
+&mt {
+    tapping-term-ms = <200>; //default: 200
+};
 
 / {
+        behaviors {
+                //https://zmk.dev/docs/behaviors/tap-dance
+                td0: tap_dance_0 {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_0";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>;
+                bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
+                l_default {
 // -----------------------------------------------------------------------------------------
-// | ESC |  Q  |  H  |  O  |  U  |  X  |                                        |  G  |  C  |  R  |  F  |  Z  | RPT |
-// |  -  |  Y  |  I  |  E  |  A  |  .  |                                        |  D  |  S  |  T  |  N  |  B  |  ;  |
-// | LPB |  J  |  /  |  ,  |  K  |  '  |                                        |  W  |  M  |  L  |  P  |  V  | RPB |
+// | ESC |  q  |  h  |  o  |  u  |  x  |                                        |  g  |  c  |  r  |  f  |  z  | POW |
+// |  -  |  y  |  i  |  e  |  a  |  .  |                                        |  d  |  s  |  t  |  n  |  b  |  ;  |
+// | GUI |  j  |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  | BTE |
 //                   | LTL | LTM | LTR |                                        | RTL | RTM | RTR |
                         bindings = <
-   &kp ESC    &kp Q  &kp H      &kp O      &kp U         &kp X                   &kp G       &kp C      &kp R      &kp F  &kp Z  &kp TODO
-   &kp MINUS  &kp Y  &kp I      &kp E      &kp A         &kp PERIOD              &kp D       &kp S      &kp T      &kp N  &kp B  &kp SEMICOLON
-   &kp TODO   &kp J  &kp SLASH  &kp COMMA  &kp K         &kp APOSTROPHE          &kp W       &kp M      &kp L      &kp P  &kp V  &kp TODO
-                                &kp ENTER  &kp BACKSPACE &kp TAB                 &kp DELETE  &KP SPACE  &kp ENTER
+&kp ESC         &kp Q   &kp H           &kp O           &kp U                   &kp X                           &kp G           &kp C           &kp R           &kp F   &kp Z   &ext_power EP_TOG
+&kp MINUS       &kp Y   &mt LSHFT I     &mt LCTRL E     &mt LALT A              &kp PERIOD                      &kp D           &kp S           &kp T           &kp N   &kp B   &kp SEMICOLON
+&kp LGUI        &kp J   &kp SLASH       &kp COMMA       &kp K                   &kp APOSTROPHE                  &kp W           &kp M           &kp L           &kp P   &kp V   &lt bluetooth_layer
+                                        &kp ENTER       &lt l_shift BACKSPACE   &kp TAB                         &kp DELETE      &KP SPACE       &kp ENTER
                         >;
                 };
-                shifted_layer {
-                        // TODO:
+                l_shift {
+// -----------------------------------------------------------------------------------------
+// |     |  Q  |  H  |  O  |  U  |  X  |                                        |  G  |  C  |  R  |  F  |  Z  |    |
+// |     |  Y  |  I  |  E  |  A  |  @  |                                        |  D  |  S  |  T  |  N  |  B  |    |
+// |     |  J  |  ?  |  !  |  K  |  `  |                                        |  W  |  M  |  L  |  P  |  V  |    |
+//                   |     |     |     |                                        |     |     |     |
+                        bindings = <
+&trans  &kp LS(Q)       &kp LS(H)       &kp LS(O)       &kp LS(U)       &kp LS(X)               &kp LS(G)       &kp LS(C)       &kp LS(R)       &kp LS(F)       &kp LS(Z)       &trans
+&trans  &kp LS(Y)       &kp LS(I)       &kp LS(E)       &kp LS(A)       &kp AT                  &kp LS(D)       &kp LS(S)       &kp LS(T)       &kp LS(N)       &kp LS(B)       &trans
+&trans  &kp LS(J)       &kp QMARK       &kp EXCL        &kp LS(K)       &kp GRAVE               &kp LS(W)       &kp LS(M)       &kp LS(L)       &kp LS(P)       &kp LS(V)       &trans
+                                        &trans          &trans          &trans                  &trans          &trans          &trans
+                        >;
+                };
+                l_bluetooth {
+                        //TODO: https://zmk.dev/docs/behaviors/bluetooth
+                };
+                l_template {
+// -----------------------------------------------------------------------------------------
+// |    |    |    |    |    |    |                        |    |    |    |    |    |    |
+// |    |    |    |    |    |    |                        |    |    |    |    |    |    |
+// |    |    |    |    |    |    |                        |    |    |    |    |    |    |
+//                |    |    |    |                        |    |    |    |
+                        bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans          &trans  &trans  &trans
+                        >;
                 };
         };
 };
