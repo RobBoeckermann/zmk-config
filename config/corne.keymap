@@ -9,6 +9,19 @@
 #include <dt-bindings/zmk/bt.h> //https://zmk.dev/docs/behaviors/bluetooth
 #include <dt-bindings/zmk/ext_power.h> //https://zmk.dev/docs/behaviors/power
 
+//https://zmk.dev/docs/config/system
+CONFIG_ZMK_KEYBOARD_NAME="Rob's Corne"
+CONFIG_ZMK_WPM=y
+CONFIG_ZMK_BATTERY_REPORT_INTERVAL=60 //60 seconds
+//CONFIG_USB=n
+//CONFIG_ZMK_SPLIT=y
+
+
+
+//https://zmk.dev/docs/config/power
+CONFIG_ZMK_SLEEP=y
+CONFIG_ZMK_SLEEP_TIMEOUT=900000 //15 minutes
+
 &mt {
     tapping-term-ms = <200>; //default: 200
 };
