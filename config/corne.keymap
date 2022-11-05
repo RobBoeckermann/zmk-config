@@ -67,8 +67,8 @@
                         bindings = <
 &kp ESC         &kp Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C           &kp R           &kp F   &kp Z   &ext_power EP_TOG
 &kp MINUS       &kp Y   &mt LSHFT I     &mt LCTRL E             &mt LALT A              &kp PERIOD                      &kp D           &kp S           &kp T           &kp N   &kp B   &kp SEMICOLON
-&kp LGUI        &kp J   &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M           &kp L           &kp P   &kp V   &mo bluetooth_layer
-                                        &lt l_function ENTER    &lt l_shift BACKSPACE   &lt l_arrows TAB                &kp DELETE      &KP SPACE       &kp ENTER
+&kp LGUI        &kp J   &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M           &kp L           &kp P   &kp V   &mo l_bluetooth
+                                        &lt l_function ENTER    &lt l_shift BACKSPACE   &lt l_arrows TAB                &kp DELETE      &kp SPACE       &kp ENTER
                         >;
                 };
                 l_shift {
