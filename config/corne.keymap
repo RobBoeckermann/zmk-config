@@ -111,7 +111,18 @@
                         >;
                 };
                 l_bluetooth {
-                        //TODO: https://zmk.dev/docs/behaviors/bluetooth
+                        //https://zmk.dev/docs/behaviors/bluetooth
+// -----------------------------------------------------------------------------------------
+// |    |    |    |    |    |    |                        |    |    |      |     |     |      |
+// |    |    |    |    |    |    |                        |    |    |      |     |     |SEL 0 |
+// |    |    |    |    |    |    |                        |    |    |CLEAR |PREV |NEXT |      |
+//                |    |    |    |                        |    |    |      |
+                        bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans           &trans          &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans           &trans          &trans         &bt BT_SEL 0
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &bt BT_CLR       &bt BT_PRV      &bt BT_NXT     &trans
+                        &trans  &trans  &trans          &trans  &trans  &trans
+                        >;
                 };
                 l_template {
 // -----------------------------------------------------------------------------------------
