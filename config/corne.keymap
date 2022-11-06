@@ -149,9 +149,9 @@
 // |    |     |  :  |  *  |  +  |     |                        |     |  &  |  ^  |  ~  |     |    |
 //                  |     |     |     |                        |     |     |     |
                         bindings = <
-&trans  &trans          &kp LESS_THAN           &kp DOLLAR              &kp GREATER_THAN        &trans                  &trans          &kp LEFT_BRACKET        &kp UNDERSCORE  &RIGHT_BRACKET  &trans          &trans
-&trans  &kp BACKSLASH   &kp LEFT_PARENTHESIS    &kp DOUBLE_QUOTES       &kp RIGHT_PARENTHESIS   &kp POUND               &kp PERCENT     &kp LEFT_BRACE          &kp EQUAL       &kp RIGHT_BRACE &kp PIPE        &trans
-&trans  &trans          &kp COLON               &kp ASTERISK            &kp PLUS                &trans                  &trans          &kp AMPERSAND           &kp CARET       &kp TILDE       &trans          &trans
+&trans  &trans          &kp LESS_THAN           &kp DOLLAR              &kp GREATER_THAN        &trans                  &trans          &kp LEFT_BRACKET        &kp UNDERSCORE  &kp RIGHT_BRACKET       &trans          &trans
+&trans  &kp BACKSLASH   &kp LEFT_PARENTHESIS    &kp DOUBLE_QUOTES       &kp RIGHT_PARENTHESIS   &kp POUND               &kp PERCENT     &kp LEFT_BRACE          &kp EQUAL       &kp RIGHT_BRACE         &kp PIPE        &trans
+&trans  &trans          &kp COLON               &kp ASTERISK            &kp PLUS                &trans                  &trans          &kp AMPERSAND           &kp CARET       &kp TILDE               &trans          &trans
                                                 &trans                  &trans                  &trans                  &trans          &trans                  &trans
                         >;
                 };
