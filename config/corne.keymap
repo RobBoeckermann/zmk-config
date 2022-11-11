@@ -48,6 +48,7 @@
         };
 
         macros {
+                //https://zmk.dev/docs/behaviors/macros
                 references: references {
                         label = "references";
                         compatible = "zmk,behavior-macro";
@@ -64,16 +65,16 @@
                                 = <&macro_tap &kp LC(B) &kp LC(T)>
                                 ;
                 };
-                prev-bookmark: prev-bookmark {
-                        label = "prev-bookmark";
+                prevbookmark: prevbookmark {
+                        label = "prevbookmark";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
                                 = <&macro_tap &kp LC(B) &kp LC(P)>
                                 ;
                 };
-                next-bookmark: next-bookmark {
-                        label = "next-bookmark";
+                nextbookmark: nextbookmark {
+                        label = "nextbookmark";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
