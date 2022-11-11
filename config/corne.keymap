@@ -15,6 +15,7 @@
 #define L_ARROWS        3
 #define L_BLUETOOTH     4
 #define L_SYMBOLS       5
+#define L_NUMPAD        6
 
 &mt {
     tapping-term-ms = <200>; //default: 200
@@ -58,7 +59,7 @@
 &kp ESC         &kp Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C           &kp R           &kp F   &kp Z   &ext_power EP_TOG
 &kp MINUS       &kp Y   &mt LSHFT I     &mt LCTRL E             &mt LALT A              &kp PERIOD                      &kp D           &kp S           &kp T           &kp N   &kp B   &kp SEMICOLON
 &kp LGUI        &kp J   &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M           &kp L           &kp P   &kp V   &mo L_BLUETOOTH
-                                        &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &kp DELETE      &kp SPACE       &kp ENTER
+                                        &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &kp DELETE      &kp SPACE       &lt L_NUMPAD ENTER
                         >;
                 };
                 l_shift {
@@ -127,13 +128,26 @@
                                                 &trans                  &trans                  &trans                  &trans          &trans                  &trans
                         >;
                 };
-                //TODO: numpad layer
+                l_numpad {
+// -----------------------------------------------------------------------------------------
+// |    |    |    |    |    |    |                        |             |  7  |  8  |  9  |     |    |
+// |    |    |    |    |    |    |                        |BACKSPACE    |  0  |  1  |  2  |  3  |    |
+// |    |    |    |    |    |    |                        |             |  4  |  5  |  6  |     |    |
+//                |    |    |    |                        |             |     |     |
+                        bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans          &trans          &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &kp BACKSPACE   &kp NUMBER_0    &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans          &kp NUMBER_4    &kp NUMBER_5    &kp NUMBER_6    &trans          &trans
+                        &trans  &trans  &trans          &trans          &trans          &trans
+                        >;
+                };
                 //TODO: vscode layer
                 //TODO: window navigation layer
                 //TODO: media layer
                 //TODO: macro layer?
                 //TODO: gaming/querty layer?
                 //TODO: mouse layer https://github.com/zmkfirmware/zmk/pull/778
+                //https://github.com/ftc/zmk/tree/mouse-ftc
                 l_template {
 // -----------------------------------------------------------------------------------------
 // |    |    |    |    |    |    |                        |    |    |    |    |    |    |
