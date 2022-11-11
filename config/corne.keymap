@@ -16,6 +16,7 @@
 #define L_BLUETOOTH     4
 #define L_SYMBOLS       5
 #define L_NUMPAD        6
+#define L_VSCODE        7
 
 &mt {
     tapping-term-ms = <200>; //default: 200
@@ -46,6 +47,41 @@
                 };
         };
 
+        macros {
+                references: references {
+                        label = "references";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                                = <&macro_tap &kp LC(K) &kp LC(R)>
+                                ;
+                };
+                bookmark: bookmark {
+                        label = "bookmark";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                                = <&macro_tap &kp LC(B) &kp LC(T)>
+                                ;
+                };
+                prev-bookmark: prev-bookmark {
+                        label = "prev-bookmark";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                                = <&macro_tap &kp LC(B) &kp LC(P)>
+                                ;
+                };
+                next-bookmark: next-bookmark {
+                        label = "next-bookmark";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                                = <&macro_tap &kp LC(B) &kp LC(N)>
+                                ;
+                };
+    };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -56,9 +92,9 @@
 // | GUI |  j  |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  | BTE |
 //                   | LTL | LTM | LTR |                                        | RTL | RTM | RTR |
                         bindings = <
-&kp ESC         &kp Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C           &kp R           &kp F   &kp Z   &ext_power EP_TOG
-&kp MINUS       &kp Y   &mt LSHFT I     &mt LCTRL E             &mt LALT A              &kp PERIOD                      &kp D           &kp S           &kp T           &kp N   &kp B   &kp SEMICOLON
-&kp LGUI        &kp J   &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M           &kp L           &kp P   &kp V   &mo L_BLUETOOTH
+&kp ESC         &kp Q           &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C           &kp R           &kp F   &kp Z   &ext_power EP_TOG
+&kp MINUS       &kp Y           &mt LSHFT I     &mt LCTRL E             &mt LALT A              &kp PERIOD                      &kp D           &kp S           &kp T           &kp N   &kp B   &kp SEMICOLON
+&kp LGUI        &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M           &kp L           &kp P   &kp V   &mo L_BLUETOOTH
                                         &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &kp DELETE      &kp SPACE       &lt L_NUMPAD ENTER
                         >;
                 };
@@ -141,7 +177,19 @@
                         &trans  &trans  &trans          &trans          &trans          &trans
                         >;
                 };
-                //TODO: vscode layer
+                l_vscode {
+// -----------------------------------------------------------------------------------------
+// |    |    |peef def          |references     |implementations        |    |                        |    |    |    |    |    |    |
+// |    |    |back              |def            |forward                |    |                        |    |    |    |    |    |    |
+// |    |    |prev bookmark     |bookmark       |next bookmark          |    |                        |    |    |    |    |    |    |
+//                              |               |                       |    |                        |    |    |    |
+                        bindings = <
+&trans  &trans  &kp LA(F12)  &references  &kp LC(F12)  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LC(MINUS)  &kp F12  &kp LC(LS(MINUS))  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans          &trans  &trans  &trans
+                        >;
+                };
                 //TODO: window navigation layer
                 //TODO: media layer
                 //TODO: macro layer?
