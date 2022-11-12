@@ -43,7 +43,7 @@
                         label = "TAP_DANCE";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&ht LC(V) LC(LS(V))>, <&kp LA(LS(LC(V)))>;
+                        bindings = <&ht LG(V) LG(LS(V))>, <&kp LA(LS(LG(V)))>;
                 };
         };
 
@@ -54,7 +54,7 @@
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
-                                = <&macro_tap &kp LC(K) &kp LC(R)>
+                                = <&macro_tap &kp LG(K) &kp LG(R)>
                                 ;
                 };
                 bookmark: bookmark {
@@ -62,7 +62,7 @@
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
-                                = <&macro_tap &kp LC(B) &kp LC(T)>
+                                = <&macro_tap &kp LG(B) &kp LG(T)>
                                 ;
                 };
                 prevbookmark: prevbookmark {
@@ -70,7 +70,7 @@
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
-                                = <&macro_tap &kp LC(B) &kp LC(P)>
+                                = <&macro_tap &kp LG(B) &kp LG(P)>
                                 ;
                 };
                 nextbookmark: nextbookmark {
@@ -78,7 +78,7 @@
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
-                                = <&macro_tap &kp LC(B) &kp LC(N)>
+                                = <&macro_tap &kp LG(B) &kp LG(N)>
                                 ;
                 };
     };
@@ -119,9 +119,9 @@
 // |    |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |       |               |F12|F4 |F5 |F6 |   |   |
 //                              |                       |               |       |               |   |   |   |
                         bindings = <
-&reset  &trans          &trans          &ht LC(W) LC(LS(T))     &kp LC(T)               &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
-&trans  &kp LC(SLASH)   &kp LC(Z)       &ht LC(C) LC(X)         &td_paste               &kp LC(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
-&trans  &kp LA(LS(A))   &kp LC(F)       &kp LC(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
+&reset  &trans          &trans          &ht LG(W) LG(LS(T))     &kp LG(T)               &kp LG(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
+&trans  &kp LG(SLASH)   &kp LG(Z)       &ht LG(C) LG(X)         &td_paste               &kp LG(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
+&trans  &kp LA(LS(A))   &kp LG(F)       &kp LG(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
                                         &trans                  &trans                  &trans                  &trans  &trans  &trans
                         >;
                 };
@@ -185,8 +185,8 @@
 // |    |    |prev bookmark     |bookmark       |next bookmark          |    |                        |    |    |    |    |    |    |
 //                              |               |                       |    |                        |    |    |    |
                         bindings = <
-&trans  &trans  &kp LA(F12)  &references  &kp LC(F12)  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LC(MINUS)  &kp F12  &kp LC(LS(MINUS))  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LA(F12)  &references  &kp LG(F12)  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(MINUS)  &kp F12  &kp LG(LS(MINUS))  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans          &trans  &trans  &trans
                         >;
