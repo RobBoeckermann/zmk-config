@@ -94,8 +94,8 @@
 //                   | LTL | LTM | LTR |                                        | RTL | RTM | RTR |
                         bindings = <
 &kp ESC         &kp Q           &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F   &kp Z   &ext_power EP_TOG
-&kp MINUS       &kp Y           &mt LSHFT I     &mt LCTRL E             &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &kp N   &kp B   &kp SEMICOLON
-&kp LGUI        &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P   &kp V   &mo L_BLUETOOTH
+&kp MINUS       &kp Y           &mt LSHFT I     &mt LGUI E             &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &kp N   &kp B   &kp SEMICOLON
+&kp LCTRL        &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P   &kp V   &mo L_BLUETOOTH
                                                 &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &kp DELETE      &lt L_SYMBOLS SPACE     &lt L_NUMPAD ENTER
                         >;
                 };
