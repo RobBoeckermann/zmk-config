@@ -17,6 +17,7 @@
 #define L_SYMBOLS       5
 #define L_NUMPAD        6
 #define L_VSCODE        7
+#define L_WINDOWS       8
 
 &mt {
     tapping-term-ms = <200>; //default: 200
@@ -94,8 +95,8 @@
 //                   | LTL | LTM | LTR |                                        | RTL | RTM | RTR |
                         bindings = <
 &kp ESC         &kp Q           &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F   &kp Z   &ext_power EP_TOG
-&kp MINUS       &kp Y           &mt LSHFT I     &mt LGUI E             &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &kp N   &kp B   &kp SEMICOLON
-&kp LCTRL        &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P   &kp V   &mo L_BLUETOOTH
+&kp MINUS       &lt L_WINDOWS Y &mt LSHFT I     &mt LGUI E              &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &kp N   &kp B   &kp SEMICOLON
+&kp LCTRL       &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P   &kp V   &mo L_BLUETOOTH
                                                 &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &kp DELETE      &lt L_SYMBOLS SPACE     &lt L_NUMPAD ENTER
                         >;
                 };
@@ -104,7 +105,7 @@
 // |     |  Q  |  H  |  O  |  U  |  X  |                                        |  G  |  C  |  R  |  F  |  Z  |    |
 // |     |  Y  |  I  |  E  |  A  |  @  |                                        |  D  |  S  |  T  |  N  |  B  |    |
 // |     |  J  |  ?  |  !  |  K  |  `  |                                        |  W  |  M  |  L  |  P  |  V  |    |
-//                   |     |     |     |                                        |     |     |     |
+//                   |     |  *  |     |                                        |     |     |     |
                         bindings = <
 &trans  &kp LS(Q)       &kp LS(H)       &kp LS(O)       &kp LS(U)       &kp LS(X)               &kp LS(G)       &kp LS(C)       &kp LS(R)       &kp LS(F)       &kp LS(Z)       &trans
 &trans  &kp LS(Y)       &kp LS(I)       &kp LS(E)       &kp LS(A)       &kp AT                  &kp LS(D)       &kp LS(S)       &kp LS(T)       &kp LS(N)       &kp LS(B)       &trans
@@ -117,7 +118,7 @@
 // |RES |               |       |CLOSE TAB              |NEW TAB        |SAVE   |               |F10|F7 |F8 |F9 |   |   |
 // |    |LINE COMMENT   |UNDO   |COPY                   |PASTE          |REDO   |               |F11|   |F1 |F2 |F3 |   |
 // |    |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |       |               |F12|F4 |F5 |F6 |   |   |
-//                              |                       |               |       |               |   |   |   |
+//                              |           *           |               |       |               |   |   |   |
                         bindings = <
 &reset  &trans          &trans          &ht LG(W) LG(LS(T))     &kp LG(T)               &kp LG(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
 &trans  &kp LG(SLASH)   &kp LG(Z)       &ht LG(C) LG(X)         &td_paste               &kp LG(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
@@ -127,10 +128,10 @@
                 };
                 l_arrows {
 // -----------------------------------------------------------------------------------------
-// |    |           |    |    |    |    |                        |    |HOME    |UP     |END       |       |    |
-// |    |SCREENSHOT |    |    |    |    |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
-// |    |           |    |    |    |    |                        |    |PAGE UP |       |PAGE DOWN |       |    |
-//                       |    |    |    |                        |    |        |       |
+// |    |           |    |    |    |     |                        |    |HOME    |UP     |END       |       |    |
+// |    |SCREENSHOT |    |    |    |     |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
+// |    |           |    |    |    |     |                        |    |PAGE UP |       |PAGE DOWN |       |    |
+//                       |    |    |  *  |                        |    |        |       |
                         bindings = <
 &trans  &trans          &trans  &trans  &trans  &trans          &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
 &trans  &kp LG(LS(S))   &trans  &trans  &trans  &trans          &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
@@ -141,9 +142,9 @@
                 l_bluetooth {
                         //https://zmk.dev/docs/behaviors/bluetooth
 // -----------------------------------------------------------------------------------------
-// |    |    |    |    |    |    |                        |    |    |      |     |     |RES   |
-// |    |    |    |    |    |    |                        |    |    |      |     |     |SEL 0 |
-// |    |    |    |    |    |    |                        |    |    |CLEAR |PREV |NEXT |      |
+// |    |    |    |    |    |    |                        |    |    |      |     |     |RES    |
+// |    |    |    |    |    |    |                        |    |    |      |     |     |SEL 0  |
+// |    |    |    |    |    |    |                        |    |    |CLEAR |PREV |NEXT |   *   |
 //                |    |    |    |                        |    |    |      |
                         bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans           &trans          &trans         &reset
@@ -157,7 +158,7 @@
 // |    |     |  <  |  $  |  >  |     |                        |     |  [  |  _  |  ]  |     |    |
 // |    |  \  |  (  |  "  |  )  |  #  |                        |  %  |  {  |  =  |  }  |  |  |    |
 // |    |     |  :  |  *  |  +  |     |                        |     |  &  |  ^  |  ~  |     |    |
-//                  |     |     |     |                        |     |     |     |
+//                  |     |     |     |                        |     |  *  |     |
                         bindings = <
 &trans  &trans          &kp LESS_THAN           &kp DOLLAR              &kp GREATER_THAN        &trans                  &trans          &kp LEFT_BRACKET        &kp UNDERSCORE  &kp RIGHT_BRACKET       &trans          &trans
 &trans  &kp BACKSLASH   &kp LEFT_PARENTHESIS    &kp DOUBLE_QUOTES       &kp RIGHT_PARENTHESIS   &kp POUND               &kp PERCENT     &kp LEFT_BRACE          &kp EQUAL       &kp RIGHT_BRACE         &kp PIPE        &trans
@@ -170,7 +171,7 @@
 // |    |    |    |    |    |    |                        |             |  7  |  8  |  9  |     |    |
 // |    |    |    |    |    |    |                        |BACKSPACE    |  0  |  1  |  2  |  3  |    |
 // |    |    |    |    |    |    |                        |             |  4  |  5  |  6  |     |    |
-//                |    |    |    |                        |             |     |     |
+//                |    |    |    |                        |             |     |  *  |
                         bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans          &trans          &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &trans          &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &kp BACKSPACE   &kp NUMBER_0    &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &trans
@@ -180,10 +181,10 @@
                 };
                 l_vscode {
 // -----------------------------------------------------------------------------------------
-// |    |    |peef def          |references     |implementations        |    |                        |    |    |    |    |    |    |
-// |    |    |back              |def            |forward                |    |                        |    |    |    |    |    |    |
-// |    |    |prev bookmark     |bookmark       |next bookmark          |    |                        |    |    |    |    |    |    |
-//                              |               |                       |    |                        |    |    |    |
+// |    |     |peef def          |references     |implementations        |    |                        |    |    |    |    |    |    |
+// |    |     |back              |def            |forward                |    |                        |    |    |    |    |    |    |
+// |    |  *  |prev bookmark     |bookmark       |next bookmark          |    |                        |    |    |    |    |    |    |
+//                               |               |                       |    |                        |    |    |    |
                         bindings = <
 &trans  &trans  &kp LA(F12)  &references  &kp LG(F12)  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LG(MINUS)  &kp F12  &kp LG(LS(MINUS))  &trans          &trans  &trans  &trans  &trans  &trans  &trans
@@ -191,7 +192,19 @@
                         &trans  &trans  &trans          &trans  &trans  &trans
                         >;
                 };
-                //TODO: window navigation layer
+                l_windows {
+// -----------------------------------------------------------------------------------------
+// |    |     |VD left           |window up      |VD right       |new VD         |                        |    |    |    |    |    |    |
+// |    |  *  |window left       |window down    |window right   |exit VD        |                        |    |    |    |    |    |    |
+// |    |     |                  |               |               |               |                        |    |    |    |    |    |    |
+//                               |monitor left   |task view      |monitor right  |                        |    |    |    |
+                        bindings = <
+&trans  &trans  &kp LG(LC(LEFT))        &kp LC(UP)      &kp LG(LC(RIGHT)        &kp LG(LC(D))           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LC(LEFT)            &kp LC(DOWN)    &kp LC(RIGHT)           &kp LG(LC(F4))          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans                  &trans          &trans                  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+                        &kp LC(LS(LEFT))  &kp LC(TAB)  &kp LC(LS(RIGHT))          &trans  &trans  &trans
+                        >;
+                };
                 //TODO: media layer
                 //TODO: macro layer?
                 //TODO: gaming/querty layer?
