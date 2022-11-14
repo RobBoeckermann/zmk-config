@@ -201,7 +201,7 @@
 // |    |     |                  |               |               |               |                        |    |    |    |    |    |    |
 //                               |monitor left   |task view      |monitor right  |                        |    |    |    |
                         bindings = <
-&trans  &trans  &kp LG(LC(LEFT))        &kp LC(UP)      &kp LG(LC(RIGHT)        &kp LG(LC(D))           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(LC(LEFT))        &kp LC(UP)      &kp LG(LC(RIGHT))       &kp LG(LC(D))           &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LC(LEFT)            &kp LC(DOWN)    &kp LC(RIGHT)           &kp LG(LC(F4))          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                  &trans          &trans                  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
                         &kp LC(LS(LEFT))  &kp LC(TAB)  &kp LC(LS(RIGHT))          &trans  &trans  &trans
