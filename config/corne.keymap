@@ -19,6 +19,7 @@
 #define L_VSCODE        7
 #define L_WINDOWS       8
 #define L_MEDIA         9
+#define L_TRAVEL       10
 
 &mt {
     tapping-term-ms = <200>; //default: 200
@@ -98,12 +99,12 @@
                 l_default {
                         //TODO: add Teams mute key
 // -----------------------------------------------------------------------------------------
-// | ESC |  q  |  h  |  o  |  u  |  x  |                                        |  g  |  c  |  r  |  f  |  z  | POW |
+// | ESC |  q  |  h  |  o  |  u  |  x  |                                        |  g  |  c  |  r  |  f  |  z  |     |
 // |  -  |  y  |  i  |  e  |  a  |  .  |                                        |  d  |  s  |  t  |  n  |  b  |  ;  |
 // | GUI |  j  |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  | BTE |
 //                   | LTL | LTM | LTR |                                        | RTL | RTM | RTR |
                         bindings = <
-&kp ESC         &lt L_MEDIA Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F   &kp Z   &ext_power EP_TOG
+&kp ESC         &lt L_MEDIA Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F   &kp Z   &none
 &kp MINUS       &lt L_WINDOWS Y &mt LSHFT I     &mt LGUI E              &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &kp N   &kp B   &kp SEMICOLON
 &kp LCTRL       &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P   &kp V   &mo L_BLUETOOTH
                                                 &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &kp DELETE      &lt L_SYMBOLS SPACE     &lt L_NUMPAD ENTER
@@ -151,15 +152,15 @@
                 l_bluetooth {
                         //https://zmk.dev/docs/behaviors/bluetooth
 // -----------------------------------------------------------------------------------------
-// |    |    |    |    |    |    |                        |    |    |      |     |     |       |
-// |    |    |    |    |    |    |                        |    |    |      |     |     |SEL 0  |
-// |    |    |    |    |    |    |                        |    |    |CLEAR |PREV |NEXT |   *   |
-//                |    |    |    |                        |    |    |      |
+// |TRAVEL TOG  |    |    |    |    |    |                        |    |    |      |     |     |       |
+// |            |    |    |    |    |    |                        |    |    |      |     |     |SEL 0  |
+// |            |    |    |    |    |    |                        |    |    |CLEAR |PREV |NEXT |   *   |
+//                        |    |    |    |                        |    |    |      |
                         bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans           &trans          &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans           &trans          &trans         &bt BT_SEL 0
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &bt BT_CLR       &bt BT_PRV      &bt BT_NXT     &trans
-                        &trans  &trans  &trans          &trans  &trans  &trans
+&tog L_TRAVEL   &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans           &trans          &trans         &trans
+&trans          &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans           &trans          &trans         &bt BT_SEL 0
+&trans          &trans  &trans  &trans  &trans  &trans          &trans  &trans  &bt BT_CLR       &bt BT_PRV      &bt BT_NXT     &trans
+                                &trans  &trans  &trans          &trans  &trans  &trans
                         >;
                 };
                 l_symbols {
@@ -226,6 +227,19 @@
 &trans  &trans  &trans                    &trans                  &trans                   &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                    &trans                  &trans                   &trans          &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans          &trans  &trans  &trans
+                        >;
+                };
+                l_travel {
+// -----------------------------------------------------------------------------------------
+// |    |    |    |    |    |    |                        |    |    |    |    |    |      |
+// |    |    |    |    |    |    |                        |    |    |    |    |    |      |
+// |    |    |    |    |    |    |                        |    |    |    |    |    | BTE  |
+//                |    |    |    |                        |    |    |    |
+                        bindings = <
+&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &mo L_BLUETOOTH
+                     &none  &none  &none          &none  &none  &none
                         >;
                 };
                 //TODO: macro layer?
