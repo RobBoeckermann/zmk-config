@@ -35,7 +35,6 @@
                         quick_tap_ms = <0>;
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
-                        //'bindings = < &foo &bar ... >;', not 'bindings = < &kp 0x1070006 >, < &kp 0x107001b >;'
                 };
 
                 //https://zmk.dev/docs/behaviors/tap-dance
@@ -45,7 +44,7 @@
                         label = "TAP_DANCE";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&ht LG(V) LG(LS(V))>, <&kp LA(LS(LG(V)))>;
+                        bindings = <&ht LG(LS(V)) LG(V)>, <&kp LA(LS(LG(V)))>;
                 };
         };
 
@@ -122,8 +121,8 @@
 // |    |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |       |               |F12|F4 |F5 |F6 |   |   |
 //                              |           *           |               |       |               |   |   |   |
                         bindings = <
-&reset  &trans          &trans          &ht LG(W) LG(LS(T))     &kp LG(T)               &kp LG(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
-&trans  &kp LG(SLASH)   &kp LG(Z)       &ht LG(C) LG(X)         &td_paste               &kp LG(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
+&reset  &trans          &trans          &ht LG(LS(T)) LG(W)     &kp LG(T)               &kp LG(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
+&trans  &kp LG(SLASH)   &kp LG(Z)       &ht LG(X) LG(C)         &td_paste               &kp LG(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
 &trans  &kp LA(LS(A))   &kp LG(F)       &kp LG(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
                                         &trans                  &trans                  &trans                  &trans  &trans  &trans
                         >;
@@ -215,7 +214,7 @@
 // |    |       |                 |               |                   |    |                        |    |    |    |    |    |    |
 //                                |               |                   |    |                        |    |    |    |
                         bindings = <
-&trans  &trans  &ht C_VOLUME_DOWN C_PREV  &ht C_VOLUME_UP C_NEXT  &ht C_PLAY_PAUSE C_MUTE  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &ht C_PREV C_VOLUME_DOWN  &ht C_NEXT C_VOLUME_UP  &ht C_MUTE C_PLAY_PAUSE  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                    &trans                  &trans                   &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                    &trans                  &trans                   &trans          &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans          &trans  &trans  &trans
