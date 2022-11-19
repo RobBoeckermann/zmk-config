@@ -140,7 +140,7 @@
                 };
                 l_arrows {
 // -----------------------------------------------------------------------------------------
-// |    |           |    |    |    |     |                        |    |HOME    |UP     |END       |       |    |
+// |    |           |    | TODO: select word   |    |     |                        |    |HOME    |UP     |END       |       |    |
 // |    |SCREENSHOT |    |    |    |     |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
 // |    |           |    |    |    |     |                        |    |PAGE UP |       |PAGE DOWN |       |    |
 //                       |    |    |  *  |                        |    |        |       |
@@ -198,9 +198,9 @@
 // |    |  *  |prev bookmark     |bookmark       |next bookmark          |    |                        |    |    |    |    |    |    |
 //                               |               |                       |    |                        |    |    |    |
                         bindings = <
-&trans  &trans  &kp LA(F12)  &references  &kp LG(F12)  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LG(MINUS)  &kp F12  &kp LG(LS(MINUS))  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LA(F12)     &references     &kp LG(F12)             &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(MINUS)   &kp F12         &kp LG(LS(MINUS))       &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &prevbookmark   &bookmark       &nextbookmark           &trans          &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans          &trans  &trans  &trans
                         >;
                 };
