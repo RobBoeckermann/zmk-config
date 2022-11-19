@@ -65,6 +65,14 @@
                         tapping-term-ms = <200>;
                         bindings = <&ht C_NEXT C_VOLUME_UP>, <&kp C_VOLUME_UP>;
                 };
+                td_volume_down: tap_dance_volume_down {
+                        //single tap = volume down, hold = previous track, double tap = volume down
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_VOLUME_UP";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&ht C_PREV C_VOLUME_DOWN>, <&kp C_VOLUME_DOWN>;
+                };
         };
 
         macros {
@@ -234,7 +242,7 @@
 // |    |       |                 |               |                   |    |                        |    |    |    |    |    |    |
 //                                |               |                   |    |                        |    |    |    |
                         bindings = <
-&trans  &trans  &ht C_PREV C_VOLUME_DOWN  &td_volume_up  &ht C_MUTE C_PLAY_PAUSE  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &td_volume_down  &td_volume_up  &ht C_MUTE C_PLAY_PAUSE  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                    &trans                  &trans                   &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                    &trans                  &trans                   &trans          &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans          &trans  &trans  &trans
