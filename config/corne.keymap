@@ -205,6 +205,7 @@
                         >;
                 };
                 l_windows {
+                        //FIXME: new VD, exit VD
 // -----------------------------------------------------------------------------------------
 // |    |     |VD left           |window up      |VD right       |new VD         |                        |    |    |    |    |    |    |
 // |    |  *  |window left       |window down    |window right   |exit VD        |                        |    |    |    |    |    |    |
@@ -214,7 +215,7 @@
 &trans  &trans  &kp LG(LC(LEFT))        &kp LC(UP)      &kp LG(LC(RIGHT))       &kp LG(LC(D))           &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LC(LEFT)            &kp LC(DOWN)    &kp LC(RIGHT)           &kp LG(LC(F4))          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                  &trans          &trans                  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &kp LC(LS(LEFT))  &kp LC(TAB)  &kp LC(LS(RIGHT))          &trans  &trans  &trans
+                        &kp LC(LS(LEFT))  &kp LG(TAB)  &kp LC(LS(RIGHT))          &trans  &trans  &trans
                         >;
                 };
                 l_media {
