@@ -48,7 +48,7 @@
                         tapping-term-ms = <200>;
                         bindings = <&ht LG(LS(V)) LG(V)>, <&kp LA(LS(LG(V)))>;
                 };
-                //TODO: double tap bootloader not working
+                //FIXME: double tap bootloader not working
                 td_reset: tap_dance_reset {
                         //single tap = soft reset, double tap = bootloader reset
                         compatible = "zmk,behavior-tap-dance";
@@ -56,6 +56,14 @@
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
                         bindings = <&reset>, <&bootloader>;
+                };
+                td_volume_up: tap_dance_volume_up {
+                        //single tap = volume up, hold = next track, double tap = volume up
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_VOLUME_UP";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&ht C_NEXT C_VOLUME_UP>, <&kp C_VOLUME_UP>;
                 };
         };
 
@@ -226,7 +234,7 @@
 // |    |       |                 |               |                   |    |                        |    |    |    |    |    |    |
 //                                |               |                   |    |                        |    |    |    |
                         bindings = <
-&trans  &trans  &ht C_PREV C_VOLUME_DOWN  &ht C_NEXT C_VOLUME_UP  &ht C_MUTE C_PLAY_PAUSE  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &ht C_PREV C_VOLUME_DOWN  &td_volume_up  &ht C_MUTE C_PLAY_PAUSE  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                    &trans                  &trans                   &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                    &trans                  &trans                   &trans          &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans          &trans  &trans  &trans
