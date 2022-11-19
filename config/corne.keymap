@@ -223,7 +223,7 @@
 &trans  &trans  &kp LG(LC(LEFT))        &kp LC(UP)      &kp LG(LC(RIGHT))       &kp LG(LC(D))           &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LC(LEFT)            &kp LC(DOWN)    &kp LC(RIGHT)           &kp LG(LC(F4))          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                  &trans          &trans                  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &kp LC(LS(LEFT))  &kp LG(TAB)  &kp LC(LS(RIGHT))          &trans  &trans  &trans
+                        &kp LC(LS(LEFT))  &kp F13  &kp LC(LS(RIGHT))          &trans  &trans  &trans
                         >;
                 };
                 l_media {
