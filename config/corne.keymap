@@ -37,7 +37,8 @@
                         quick_tap_ms = <0>;
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
-                };ht_reset: hold_tap reset {
+                };
+                ht_reset: hold_tap_reset {
                         //single tap = reset, hold = bootloader
                         compatible = "zmk,behavior-hold-tap";
                         label = "HOLD_TAP_RESET";
