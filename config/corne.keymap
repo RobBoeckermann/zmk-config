@@ -38,16 +38,6 @@
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                 };
-                ht_reset: hold_tap_reset {
-                        //single tap = reset, hold = bootloader
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "HOLD_TAP_RESET";
-                        #binding-cells = <2>;
-                        tapping_term_ms = <200>;
-                        quick_tap_ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&bootloader>, <&reset>;
-                };
 
                 //https://zmk.dev/docs/behaviors/tap-dance
                 td_paste: tap_dance_paste {
@@ -145,15 +135,15 @@
                 };
                 l_function {
 // -----------------------------------------------------------------------------------------
-// |RES |               |       |CLOSE TAB              |NEW TAB        |SAVE   |               |F10|F7 |F8 |F9 |   |   |
+// |RES |BOOTLOADER     |       |CLOSE TAB              |NEW TAB        |SAVE   |               |F10|F7 |F8 |F9 |   |   |
 // |    |LINE COMMENT   |UNDO   |COPY                   |PASTE          |REDO   |               |F11|   |F1 |F2 |F3 |   |
 // |    |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |       |               |F12|F4 |F5 |F6 |   |   |
 //                              |           *           |               |       |               |   |   |   |
                         bindings = <
-&ht_reset  &trans          &trans          &ht LG(LS(T)) LG(W)     &kp LG(T)               &kp LG(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
-&trans     &kp LG(SLASH)   &kp LG(Z)       &ht LG(X) LG(C)         &td_paste               &kp LG(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
-&trans     &kp LA(LS(A))   &kp LG(F)       &kp LG(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
-                                           &trans                  &trans                  &trans                  &trans  &trans  &trans
+&reset  &bootloader     &trans          &ht LG(LS(T)) LG(W)     &kp LG(T)               &kp LG(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
+&trans  &kp LG(SLASH)   &kp LG(Z)       &ht LG(X) LG(C)         &td_paste               &kp LG(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
+&trans  &kp LA(LS(A))   &kp LG(F)       &kp LG(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
+                                        &trans                  &trans                  &trans                  &trans  &trans  &trans
                         >;
                 };
                 l_arrows {
@@ -198,12 +188,12 @@
                 };
                 l_numpad {
 // -----------------------------------------------------------------------------------------
-// |    |    |    |    |    |    |                        |             |  7  |  8  |  9  |     | RES   |
-// |    |    |    |    |    |    |                        |BACKSPACE    |  0  |  1  |  2  |  3  |       |
-// |    |    |    |    |    |    |                        |             |  4  |  5  |  6  |     |       |
+// |    |    |    |    |    |    |                        |             |  7  |  8  |  9  |BOOTLOADER | RES   |
+// |    |    |    |    |    |    |                        |BACKSPACE    |  0  |  1  |  2  |  3        |       |
+// |    |    |    |    |    |    |                        |             |  4  |  5  |  6  |           |       |
 //                |    |    |    |                        |             |     |  *  |
                         bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans          &trans          &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &trans          &bootloader
+&trans  &trans  &trans  &trans  &trans  &trans          &trans          &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &bootloader     &reset
 &trans  &trans  &trans  &trans  &trans  &trans          &kp BACKSPACE   &kp NUMBER_0    &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans          &kp NUMBER_4    &kp NUMBER_5    &kp NUMBER_6    &trans          &trans
                         &trans  &trans  &trans          &trans          &trans          &trans
