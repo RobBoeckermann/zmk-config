@@ -155,15 +155,15 @@
                 };
                 l_arrows {
 // -----------------------------------------------------------------------------------------
-// |    |           |    | SELECT WORD  |    |     |                        |    |HOME    |UP     |END       |       |    |
-// |    |SCREENSHOT |    |              |    |     |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
-// |    |           |    |              |    |     |                        |    |PAGE UP |       |PAGE DOWN |       |    |
-//                       |              |    |  *  |                        |    |        |       |
+// |      |            |                | SELECT WORD |         |          |                        |    |HOME    |UP     |END       |       |    |
+// |      | SCREENSHOT | SHIFT          | GUI         | ALT     |          |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
+// | STOP | RESTART    | DEBUG/CONTINUE | STEP        | STEP IN | STEP OUT |                        |    |PAGE UP |       |PAGE DOWN |       |    |
+//                       |              |             |          *         |                        |    |        |       |
                         bindings = <
-&trans  &trans          &trans  &selectword     &trans  &trans          &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
-&trans  &kp LC(LS(S))   &trans  &trans          &trans  &trans          &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
-&trans  &trans          &trans  &trans          &trans  &trans          &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
-                                &trans          &trans  &trans          &trans  &trans          &trans
+&trans      &kp LC(LS(S))   &trans  &trans          &trans   &trans          &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
+&trans      &trans          &trans  &selectword     &trans   &trans          &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
+&kp LS(F5)  &kp LS(LG(F5))  &kp F5  &kp F10         &kp F11  &kp LS(F11)     &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
+                                    &trans          &trans   &trans          &trans  &trans          &trans
                         >;
                 };
                 l_bluetooth {
