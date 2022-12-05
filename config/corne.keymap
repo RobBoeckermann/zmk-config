@@ -150,7 +150,7 @@
 // |    |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |       |               |F12|F4 |F5 |F6 |   |   |
 //                              |           *           |               |       |               |   |   |   |
                         bindings = <
-&ht_reset A A  &trans          &trans          &ht LG(LS(T)) LG(W)     &kp LG(T)               &kp LG(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
+&ht_reset  &trans          &trans          &ht LG(LS(T)) LG(W)     &kp LG(T)               &kp LG(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
 &trans     &kp LG(SLASH)   &kp LG(Z)       &ht LG(X) LG(C)         &td_paste               &kp LG(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
 &trans     &kp LA(LS(A))   &kp LG(F)       &kp LG(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
                                            &trans                  &trans                  &trans                  &trans  &trans  &trans
@@ -203,7 +203,7 @@
 // |    |    |    |    |    |    |                        |             |  4  |  5  |  6  |     |       |
 //                |    |    |    |                        |             |     |  *  |
                         bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans          &trans          &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &trans          &ht_reset A A
+&trans  &trans  &trans  &trans  &trans  &trans          &trans          &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &trans          &ht_reset
 &trans  &trans  &trans  &trans  &trans  &trans          &kp BACKSPACE   &kp NUMBER_0    &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans          &kp NUMBER_4    &kp NUMBER_5    &kp NUMBER_6    &trans          &trans
                         &trans  &trans  &trans          &trans          &trans          &trans
