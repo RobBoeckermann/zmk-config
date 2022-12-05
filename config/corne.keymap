@@ -100,7 +100,14 @@
                                 = <&macro_tap &kp LG(B) &kp LG(N)>
                                 ;
                 };
-                //TODO: select word at cursor
+                selectword: selectword {
+                        label = "selectword";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                                = <&macro_tap &kp LA(LEFT) &kp LA(LS(RIGHT))>
+                                ;
+                };
     };
 
         keymap {
@@ -148,10 +155,10 @@
                 };
                 l_arrows {
 // -----------------------------------------------------------------------------------------
-// |    |           |    | TODO: select word   |    |     |                        |    |HOME    |UP     |END       |       |    |
-// |    |SCREENSHOT |    |    |    |     |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
-// |    |           |    |    |    |     |                        |    |PAGE UP |       |PAGE DOWN |       |    |
-//                       |    |    |  *  |                        |    |        |       |
+// |    |           |    | SELECT WORD  |    |     |                        |    |HOME    |UP     |END       |       |    |
+// |    |SCREENSHOT |    |              |    |     |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
+// |    |           |    |              |    |     |                        |    |PAGE UP |       |PAGE DOWN |       |    |
+//                       |              |    |  *  |                        |    |        |       |
                         bindings = <
 &trans  &trans          &trans  &trans  &trans  &trans          &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
 &trans  &kp LC(LS(S))   &trans  &trans  &trans  &trans          &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
@@ -227,7 +234,6 @@
                         >;
                 };
                 l_media {
-                        //TODO: add tap and hold for volume adjustment
 // -----------------------------------------------------------------------------------------
 // |    |   *   |VOL DOWN / PREV  |VOL UP / NEXT  |PLAY PAUSE / MUTE  |    |                        |    |    |    |    |    |    |
 // |    |       |                 |               |                   |    |                        |    |    |    |    |    |    |
@@ -266,7 +272,6 @@
                               &none  &none  &none          &none  &none  &none
                         >;
                 };
-                //TODO: macro layer?
                 //TODO: gaming/querty layer?
                 //TODO: mouse layer https://github.com/zmkfirmware/zmk/pull/778
                 //https://github.com/ftc/zmk/tree/mouse-ftc
