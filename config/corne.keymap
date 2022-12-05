@@ -160,10 +160,10 @@
 // |    |           |    |              |    |     |                        |    |PAGE UP |       |PAGE DOWN |       |    |
 //                       |              |    |  *  |                        |    |        |       |
                         bindings = <
-&trans  &trans          &trans  &trans  &trans  &trans          &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
-&trans  &kp LC(LS(S))   &trans  &trans  &trans  &trans          &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
-&trans  &trans          &trans  &trans  &trans  &trans          &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
-                                &trans  &trans  &trans          &trans  &trans          &trans
+&trans  &trans          &trans  &selectword     &trans  &trans          &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
+&trans  &kp LC(LS(S))   &trans  &trans          &trans  &trans          &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
+&trans  &trans          &trans  &trans          &trans  &trans          &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
+                                &trans          &trans  &trans          &trans  &trans          &trans
                         >;
                 };
                 l_bluetooth {
