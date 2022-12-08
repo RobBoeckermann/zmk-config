@@ -114,14 +114,13 @@
                 compatible = "zmk,keymap";
 
                 l_default {
-                        //TODO: add Teams mute key
 // -----------------------------------------------------------------------------------------
-// | ESC |  q  |  h  |  o  |  u  |  x  |                                        |  g  |  c  |  r  |  f  |  z  |     |
-// |  -  |  y  |  i  |  e  |  a  |  .  |                                        |  d  |  s  |  t  |  n  |  b  |  ;  |
-// | GUI |  j  |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  | BTE |
+// | ESC |  q  |  h  |  o  |  u  |  x  |                                        |  g  |  c  |  r  |  f  |  z  | MEET MUTE |
+// |  -  |  y  |  i  |  e  |  a  |  .  |                                        |  d  |  s  |  t  |  n  |  b  |  ;         |
+// | GUI |  j  |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  | BTE        |
 //                   | LTL | LTM | LTR |                                        | RTL | RTM | RTR |
                         bindings = <
-&kp ESC         &lt L_MEDIA Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F   &kp Z   &none
+&kp ESC         &lt L_MEDIA Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F   &kp Z   &kp LG(D)
 &kp MINUS       &lt L_WINDOWS Y &mt LSHFT I     &mt LGUI E              &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &kp N   &kp B   &kp SEMICOLON
 &kp LCTRL       &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P   &kp V   &mo L_BLUETOOTH
                                                 &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &kp DELETE      &lt L_SYMBOLS SPACE     &lt L_NUMPAD ENTER
@@ -155,13 +154,13 @@
                 };
                 l_arrows {
 // -----------------------------------------------------------------------------------------
-// |      |            |                | SELECT WORD |         |          |                        |    |HOME    |UP     |END       |       |    |
-// |      | SCREENSHOT | SHIFT          | GUI         | ALT     |          |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
-// | STOP | RESTART    | DEBUG/CONTINUE | STEP        | STEP IN | STEP OUT |                        |    |PAGE UP |       |PAGE DOWN |       |    |
-//                       |              |             |          *         |                        |    |        |       |
+// |               |            |                | SELECT WORD |         |          |                        |    |HOME    |UP     |END       |       |    |
+// | RUN W/O DEBUG | SCREENSHOT | SHIFT          | GUI         | ALT     |          |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
+// | STOP          | RESTART    | DEBUG/CONTINUE | STEP        | STEP IN | STEP OUT |                        |    |PAGE UP |       |PAGE DOWN |       |    |
+//                              |                |             |          *         |                        |    |        |       |
                         bindings = <
 &trans      &trans          &trans  &selectword     &trans   &trans          &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
-&trans      &kp LC(LS(S))   &trans  &trans          &trans   &trans          &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
+&LG(F5)     &kp LC(LS(S))   &trans  &trans          &trans   &trans          &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
 &kp LS(F5)  &kp LS(LG(F5))  &kp F5  &kp F10         &kp F11  &kp LS(F11)     &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
                                     &trans          &trans   &trans          &trans  &trans          &trans
                         >;
@@ -207,6 +206,7 @@
                         >;
                 };
                 l_vscode {
+                        //TODO: zen mode key LG(K)+Z
 // -----------------------------------------------------------------------------------------
 // |    |     |peef def          |references     |implementations        |    |                        |    |    |    |    |    |    |
 // |    |     |back              |def            |forward                |    |                        |    |    |    |    |    |    |
