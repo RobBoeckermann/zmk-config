@@ -23,7 +23,8 @@
 #define L_TRAVELER     11
 
 &mt {
-    tapping-term-ms = <300>; //default: 200
+    tapping-term-ms = <200>; //default: 200
+    flavor = "tap-preferred"; //default: hold-preferred
 };
 
 / {
