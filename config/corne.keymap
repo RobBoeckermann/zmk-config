@@ -45,7 +45,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_PASTE";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <300>;
                         bindings = <&ht LG(LS(V)) LG(V)>, <&kp LA(LS(LG(V)))>;
                 };
                 td_volume_up: tap_dance_volume_up {
