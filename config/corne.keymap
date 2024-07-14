@@ -211,13 +211,12 @@
 //                               |               |                       |    |                        |    |    |    |
                         bindings = <
 &trans  &trans  &kp LA(F12)     &references                        &kp LC(F12)             &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LC(MINUS)   &kp F12                            &kp LC(LS(MINUS))       &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LA(LEFT)    &kp F12                            &kp LA(RIGHT)           &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &prevbookmark   &ht LA(LC(K)) LA(LC(LG(LS(K))))    &nextbookmark           &trans          &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans                                                             &trans  &trans  &trans
                         >;
                 };
                 l_windows {
-                        //FIXME: new VD, exit VD
 // -----------------------------------------------------------------------------------------
 // |    |     |VD left           |window up      |VD right       |new VD         |                        |    |    |    |    |    |    |
 // |    |  *  |window left       |window down    |window right   |exit VD        |                        |    |    |    |    |    |    |
@@ -227,7 +226,7 @@
 &trans  &trans  &kp LG(LC(LEFT))        &kp LG(UP)      &kp LG(LC(RIGHT))       &kp LG(LC(D))           &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LG(LEFT)            &kp LG(DOWN)    &kp LG(RIGHT)           &kp LG(LC(F4))          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                  &trans          &trans                  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &kp LG(LS(LEFT))  &kp F13  &kp LG(LS(RIGHT))          &trans  &trans  &trans
+                        &kp LG(LS(LEFT))  &kp F13  &kp LG(LS(RIGHT))                                    &trans  &trans  &trans
                         >;
                 };
                 l_media {
