@@ -81,14 +81,6 @@
                                 = <&macro_tap &kp LC(K) &kp LC(R)>
                                 ;
                 };
-                bookmark: bookmark {
-                        label = "bookmark";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings
-                                = <&macro_tap &kp LC(B) &kp LC(T)>
-                                ;
-                };
                 prevbookmark: prevbookmark {
                         label = "prevbookmark";
                         compatible = "zmk,behavior-macro";
@@ -160,7 +152,7 @@
                 l_arrows {
 // -----------------------------------------------------------------------------------------
 // |               |            |                | SELECT WORD |         |          |                        |    |HOME    |UP     |END       |       |    |
-// | RUN W/O DEBUG | SCREENSHOT | SHIFT          | GUI         | ALT     |          |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
+// | RUN W/O DEBUG | SCREENSHOT | SHIFT          | CTRL        | ALT     |          |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
 // | STOP          | RESTART    | DEBUG/CONTINUE | STEP        | STEP IN | STEP OUT |                        |    |PAGE UP |       |PAGE DOWN |       |    |
 //                              |                |             |          *         |                        |    |        |       |
                         bindings = <
@@ -218,10 +210,10 @@
 // |    |  *  |prev bookmark     |bookmark       |next bookmark          |    |                        |    |    |    |    |    |    |
 //                               |               |                       |    |                        |    |    |    |
                         bindings = <
-&trans  &trans  &kp LA(F12)     &references     &kp LC(F12)             &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LC(MINUS)   &kp F12         &kp LC(LS(MINUS))       &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &prevbookmark   &bookmark       &nextbookmark           &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans          &trans  &trans  &trans
+&trans  &trans  &kp LA(F12)     &references                        &kp LC(F12)             &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LC(MINUS)   &kp F12                            &kp LC(LS(MINUS))       &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &prevbookmark   &ht LA(LC(K)) LA(LC(LG(LS(K))))    &nextbookmark           &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                                                             &trans  &trans  &trans
                         >;
                 };
                 l_windows {
