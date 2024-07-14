@@ -26,6 +26,10 @@
     tapping-term-ms = <200>; //default: 200
     flavor = "tap-preferred"; //default: hold-preferred
 };
+&lt {
+    tapping-term-ms = <200>; //default: 200
+    flavor = "hold-preferred"; //default: tap-preferred
+};
 
 / {
         behaviors {
