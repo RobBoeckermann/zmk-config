@@ -47,7 +47,7 @@
                         label = "TAP_DANCE_PASTE";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&ht LG(LS(V)) LG(V)>, <&kp LA(LS(LG(V)))>;
+                        bindings = <&ht LC(LS(V)) LC(V)>, <&kp LA(LS(LC(V)))>;
                 };
                 td_volume_up: tap_dance_volume_up {
                         //single tap = volume up, hold = next track, double tap = volume up
@@ -74,7 +74,7 @@
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
-                                = <&macro_tap &kp LG(K) &kp LG(R)>
+                                = <&macro_tap &kp LC(K) &kp LC(R)>
                                 ;
                 };
                 bookmark: bookmark {
@@ -82,7 +82,7 @@
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
-                                = <&macro_tap &kp LG(B) &kp LG(T)>
+                                = <&macro_tap &kp LC(B) &kp LC(T)>
                                 ;
                 };
                 prevbookmark: prevbookmark {
@@ -90,7 +90,7 @@
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
-                                = <&macro_tap &kp LG(B) &kp LG(P)>
+                                = <&macro_tap &kp LC(B) &kp LC(P)>
                                 ;
                 };
                 nextbookmark: nextbookmark {
@@ -98,7 +98,7 @@
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
-                                = <&macro_tap &kp LG(B) &kp LG(N)>
+                                = <&macro_tap &kp LC(B) &kp LC(N)>
                                 ;
                 };
                 selectword: selectword {
@@ -121,9 +121,9 @@
 // | GUI |  j  |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  | BTE        |
 //                   | LTL | LTM | LTR |                                        | RTL | RTM | RTR |
                         bindings = <
-&kp ESC         &lt L_MEDIA Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F   &kp Z   &kp LG(D)
-&kp MINUS       &lt L_WINDOWS Y &mt LSHFT I     &mt LGUI E              &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &kp N   &kp B   &kp SEMICOLON
-&kp LCTRL       &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P   &kp V   &mo L_BLUETOOTH
+&kp ESC         &lt L_MEDIA Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F   &kp Z   &kp LC(D)
+&kp MINUS       &lt L_WINDOWS Y &mt LSHFT I     &mt LCTRL E             &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &kp N   &kp B   &kp SEMICOLON
+&kp LGUI        &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P   &kp V   &mo L_BLUETOOTH
                                                 &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &kp DELETE      &lt L_SYMBOLS SPACE     &lt L_NUMPAD ENTER
                         >;
                 };
@@ -147,9 +147,9 @@
 // |    |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |       |               |F12|F4 |F5 |F6 |   |   |
 //                              |           *           |               |       |               |   |   |   |
                         bindings = <
-&reset  &bootloader     &trans          &ht LG(LS(T)) LG(W)     &kp LG(T)               &kp LG(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
-&trans  &kp LG(SLASH)   &kp LG(Z)       &ht LG(X) LG(C)         &td_paste               &kp LG(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
-&trans  &kp LA(LS(A))   &kp LG(F)       &kp LG(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
+&reset  &bootloader     &trans          &ht LC(LS(T)) LC(W)     &kp LC(T)               &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
+&trans  &kp LC(SLASH)   &kp LC(Z)       &ht LC(X) LC(C)         &td_paste               &kp LC(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
+&trans  &kp LA(LS(A))   &kp LC(F)       &kp LC(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
                                         &trans                  &trans                  &trans                  &trans  &trans  &trans
                         >;
                 };
@@ -162,7 +162,7 @@
                         bindings = <
 &trans      &trans          &trans  &selectword     &trans   &trans          &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
 &kp LC(F5)  &kp LC(LS(S))   &trans  &trans          &trans   &trans          &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
-&kp LS(F5)  &kp LS(LG(F5))  &kp F5  &kp F10         &kp F11  &kp LS(F11)     &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
+&kp LS(F5)  &kp LS(LC(F5))  &kp F5  &kp F10         &kp F11  &kp LS(F11)     &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
                                     &trans          &trans   &trans          &trans  &trans          &trans
                         >;
                 };
@@ -207,15 +207,15 @@
                         >;
                 };
                 l_vscode {
-                        //TODO: zen mode key LG(K)+Z
+                        //TODO: zen mode key LC(K)+Z
 // -----------------------------------------------------------------------------------------
 // |    |     |peef def          |references     |implementations        |    |                        |    |    |    |    |    |    |
 // |    |     |back              |def            |forward                |    |                        |    |    |    |    |    |    |
 // |    |  *  |prev bookmark     |bookmark       |next bookmark          |    |                        |    |    |    |    |    |    |
 //                               |               |                       |    |                        |    |    |    |
                         bindings = <
-&trans  &trans  &kp LA(F12)     &references     &kp LG(F12)             &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LG(MINUS)   &kp F12         &kp LG(LS(MINUS))       &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LA(F12)     &references     &kp LC(F12)             &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LC(MINUS)   &kp F12         &kp LC(LS(MINUS))       &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &prevbookmark   &bookmark       &nextbookmark           &trans          &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans          &trans  &trans  &trans
                         >;
@@ -228,10 +228,10 @@
 // |    |     |                  |               |               |               |                        |    |    |    |    |    |    |
 //                               |monitor left   |task view      |monitor right  |                        |    |    |    |
                         bindings = <
-&trans  &trans  &kp LG(LC(LEFT))        &kp LC(UP)      &kp LG(LC(RIGHT))       &kp LG(LC(D))           &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LC(LEFT)            &kp LC(DOWN)    &kp LC(RIGHT)           &kp LG(LC(F4))          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(LC(LEFT))        &kp LG(UP)      &kp LG(LC(RIGHT))       &kp LG(LC(D))           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(LEFT)            &kp LG(DOWN)    &kp LG(RIGHT)           &kp LG(LC(F4))          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                  &trans          &trans                  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &kp LC(LS(LEFT))  &kp F13  &kp LC(LS(RIGHT))          &trans  &trans  &trans
+                        &kp LG(LS(LEFT))  &kp F13  &kp LG(LS(RIGHT))          &trans  &trans  &trans
                         >;
                 };
                 l_media {
