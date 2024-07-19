@@ -20,8 +20,6 @@
 #define L_VSCODE        7
 #define L_WINDOWS       8
 #define L_MEDIA         9
-#define L_TRAVEL       10
-#define L_TRAVELER     11
 
 &mt {
     tapping-term-ms = <200>; //default: 200
@@ -158,7 +156,7 @@
                 l_bluetooth {
                         //https://zmk.dev/docs/behaviors/bluetooth
 // -----------------------------------------------------------------------------------------
-// |TRAVEL TOG  |    |    |    |    |    |                        |    |    |      |     | OUTPUT TOGGLES |
+// |SOFT OFF    |    |    |    |    |    |                        |    |    |      |     | OUTPUT TOGGLES |
 // |            |    |    |    |    |    |                        |    |    |      |     |     |CLEAR  |
 // |            |    |    |    |    |    |                        |    |    |SEL 0 |PREV |NEXT |   *   |
 //                        |    |    |    |                        |    |    |      |
@@ -233,32 +231,6 @@
 &trans  &trans  &trans           &trans         &trans                   &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans           &trans         &trans                   &trans          &trans  &trans  &trans  &trans  &trans  &trans
                                  &trans         &trans                   &trans          &trans  &trans  &trans
-                        >;
-                };
-                l_travel {
-// -----------------------------------------------------------------------------------------
-// |    |    |    |    |    |    |                        |    |    |    |    |    |           |
-// |    |    |    |    |    |    |                        |    |    |    |    |    |           |
-// |    |    |    |    |    |    |                        |    |    |    |    |    | TRAVELER  |
-//                |    |    |    |                        |    |    |    |
-                        bindings = <
-&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &mo L_TRAVELER
-                     &none  &none  &none          &none  &none  &none
-                        >;
-                };
-                l_traveler {
-// -----------------------------------------------------------------------------------------
-// |TRAVEL TOG  |    |    |    |    |    |                        |    |    |    |    |    |      |
-// |            |    |    |    |    |    |                        |    |    |    |    |    |      |
-// |            |    |    |    |    |    |                        |    |    |    |    |    |      |
-//                        |    |    |    |                        |    |    |    |
-                        bindings = <
-&tog L_TRAVEL   &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
-&none           &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
-&none           &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
-                              &none  &none  &none          &none  &none  &none
                         >;
                 };
                 //TODO: gaming/querty layer?
