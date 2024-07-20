@@ -20,6 +20,8 @@
 #define L_VSCODE        7
 #define L_WINDOWS       8
 #define L_MEDIA         9
+#define L_TRAVEL       10
+#define L_TRAVELER     11
 
 &mt {
     tapping-term-ms = <200>; //default: 200
@@ -157,7 +159,7 @@
                 l_bluetooth {
                         //https://zmk.dev/docs/behaviors/bluetooth
 // -----------------------------------------------------------------------------------------
-// |SOFT OFF    |    |    |    |    |    |                        |    |    |      |     | OUTPUT TOGGLES |
+// |TRAVEL TOG  |    |    |    |    |    |                        |    |    |      |     | OUTPUT TOGGLES |
 // |            |    |    |    |    |    |                        |    |    |      |     |     |CLEAR  |
 // |            |    |    |    |    |    |                        |    |    |SEL 0 |PREV |NEXT |   *   |
 //                        |    |    |    |                        |    |    |      |
@@ -233,6 +235,33 @@
                                  &trans         &trans                   &trans          &trans  &trans  &trans
                         >;
                 };
+                l_travel {
+// -----------------------------------------------------------------------------------------
+// |    |    |    |    |    |    |                        |    |    |    |    |    |           |
+// |    |    |    |    |    |    |                        |    |    |    |    |    |           |
+// |    |    |    |    |    |    |                        |    |    |    |    |    | TRAVELER  |
+//                |    |    |    |                        |    |    |    |
+                        bindings = <
+&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &mo L_TRAVELER
+                     &none  &none  &none          &none  &none  &none
+                        >;
+                };
+                l_traveler {
+// -----------------------------------------------------------------------------------------
+// |TRAVEL TOG  |    |    |    |    |    |                        |    |    |    |    |    |      |
+// |            |    |    |    |    |    |                        |    |    |    |    |    |      |
+// |            |    |    |    |    |    |                        |    |    |    |    |    |      |
+//                        |    |    |    |                        |    |    |    |
+                        bindings = <
+&tog L_TRAVEL   &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
+&none           &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
+&none           &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
+                              &none  &none  &none          &none  &none  &none
+                        >;
+                };
+                //TODO: gaming/querty layer?
                 //TODO: mouse layer https://github.com/zmkfirmware/zmk/pull/778
                 //https://github.com/ftc/zmk/tree/mouse-ftc
                 l_template {
