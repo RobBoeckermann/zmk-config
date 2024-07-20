@@ -195,7 +195,6 @@
                         >;
                 };
                 l_vscode {
-                        //TODO: zen mode key LC(K)+Z
 // -----------------------------------------------------------------------------------------
 // |    |     |peef def          |references     |implementations        |    |                        |    |    |    |    |    |    |
 // |    |     |back              |def            |forward                |    |                        |    |    |    |    |    |    |
@@ -234,7 +233,6 @@
                                  &trans         &trans                   &trans          &trans  &trans  &trans
                         >;
                 };
-                //TODO: gaming/querty layer?
                 //TODO: mouse layer https://github.com/zmkfirmware/zmk/pull/778
                 //https://github.com/ftc/zmk/tree/mouse-ftc
                 l_template {
