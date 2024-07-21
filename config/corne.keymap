@@ -30,7 +30,8 @@
 &lt {
     tapping-term-ms = <200>; //default: 200
     flavor = "hold-preferred"; //default: tap-preferred
-    quick-tap-ms = <200>; //allow backspace to be held by tapping and holding
+    quick-tap-ms = <200>; //allows backspace to be held by tapping and holding
+    //FIXME: backspacing, followed by a hold (for the shift layer) behaves as a double backspace
 };
 
 / {
@@ -159,14 +160,14 @@
                 l_bluetooth {
                         //https://zmk.dev/docs/behaviors/bluetooth
 // -----------------------------------------------------------------------------------------
-// |TRAVEL TOG  |TRAVEL TOG  |    |    |    |    |                        |    |       |       |      |       |       |
-// |            |            |    |    |    |    |                        |    |       |       |      | CLEAR |       |
-// |            |            |    |    |    |    |                        |    | SEL 0 | SEL 1 | SEL2 |   *   |      |
+// |TRAVEL TOG  |TRAVEL TOG  |    |    |    |    |                        |    | USB   | BLE   |      | CLEAR ALL |       |
+// |            |            |    |    |    |    |                        |    |       |       |      | CLEAR     |       |
+// |            |            |    |    |    |    |                        |    | SEL 0 | SEL 1 | SEL2 |   *       |      |
 //                                |    |    |    |                        |    |       |       |
                         bindings = <
-&tog L_TRAVEL   &tog L_TRAVEL  &trans  &trans  &trans  &trans          &trans  &trans          &trans           &trans         &trans      &trans
-&trans          &trans         &trans  &trans  &trans  &trans          &trans  &trans          &trans           &trans         &bt BT_CLR  &trans
-&trans          &trans         &trans  &trans  &trans  &trans          &trans  &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2   &trans      &trans
+&tog L_TRAVEL   &tog L_TRAVEL  &trans  &trans  &trans  &trans          &trans  &out OUT_USB    &out OUT_BLE     &trans         &bt BT_CLR_ALL   &trans
+&trans          &trans         &trans  &trans  &trans  &trans          &trans  &trans          &trans           &trans         &bt BT_CLR       &trans
+&trans          &trans         &trans  &trans  &trans  &trans          &trans  &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2   &trans           &trans
                                 &trans  &trans  &trans          &trans  &trans  &trans
                         >;
                 };
