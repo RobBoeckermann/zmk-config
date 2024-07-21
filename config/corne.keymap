@@ -106,12 +106,12 @@
 
                 l_default {
 // -----------------------------------------------------------------------------------------
-// | ESC |  q  |  h  |  o  |  u  |  x  |                                        |  g  |  c  |  r  |  f  |  z  | COFFEE |
-// |  -  |  y  |  i  |  e  |  a  |  .  |                                        |  d  |  s  |  t  |  n  |  b  |  ;         |
-// | GUI |  j  |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  | BTE        |
+// | ESC |  q  |  h  |  o  |  u  |  x  |                                        |  g  |  c  |  r  |  f  |  z  |     |
+// |  -  |  y  |  i  |  e  |  a  |  .  |                                        |  d  |  s  |  t  |  n  |  b  |  ;  |
+// | GUI |  j  |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  |     |
 //                   | LTL | LTM | LTR |                                        | RTL | RTM | RTR |
                         bindings = <
-&kp ESC         &lt L_MEDIA Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F   &kp Z               &kp K_COFFEE
+&kp ESC         &lt L_MEDIA Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F   &kp Z               &none
 &kp MINUS       &lt L_WINDOWS Y &mt LSHFT I     &mt LCTRL E             &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &kp N   &kp B               &kp SEMICOLON
 &kp LGUI        &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P   &lt L_BLUETOOTH V   &mo L_BLUETOOTH
                                                 &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &kp DELETE      &lt L_SYMBOLS SPACE     &lt L_NUMPAD ENTER
@@ -132,41 +132,41 @@
                 };
                 l_function {
 // -----------------------------------------------------------------------------------------
-// |RES |BOOTLOADER     |       |CLOSE TAB              |NEW TAB        |SAVE   |               |F10|F7 |F8 |F9 |   |   |
-// |    |LINE COMMENT   |UNDO   |COPY                   |PASTE          |REDO   |               |F11|   |F1 |F2 |F3 |   |
-// |    |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |       |               |F12|F4 |F5 |F6 |   |   |
-//                              |           *           |               |       |               |   |   |   |
+// |RES |BOOTLOADER     |       |CLOSE TAB              |NEW TAB        |SAVE        |               |F10|F7 |F8 |F9 |   |   |
+// |    |LINE COMMENT   |UNDO   |COPY                   |PASTE          |REDO        |               |F11|   |F1 |F2 |F3 |   |
+// |    |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |            |               |F12|F4 |F5 |F6 |   |   |
+//                              |           *           | RES           | BOOTLOADER |               |   |   |   |
                         bindings = <
 &sys_reset  &bootloader     &trans          &ht LC(LS(T)) LC(W)     &kp LC(T)               &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
 &trans      &kp LC(SLASH)   &kp LC(Z)       &ht LC(X) LC(C)         &td_paste               &kp LC(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
 &trans      &kp LA(LS(A))   &kp LC(F)       &kp LC(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
-                                            &trans                  &trans                  &trans                  &trans  &trans  &trans
+                                            &trans                  &sys_reset              &bootloader             &trans  &trans  &trans
                         >;
                 };
                 l_arrows {
 // -----------------------------------------------------------------------------------------
-// |               |            |                | SELECT WORD |         |          |                        |    |HOME    |UP     |END       |       |    |
-// | RUN W/O DEBUG | SCREENSHOT | SHIFT          | CTRL        | ALT     |          |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
-// | STOP          | RESTART    | DEBUG/CONTINUE | STEP        | STEP IN | STEP OUT |                        |    |PAGE UP |       |PAGE DOWN |       |    |
-//                              |                |             |          *         |                        |    |        |       |
+// |    |            |                | SELECT WORD |         |          |                        |    |HOME    |UP     |END       |       |    |
+// |    | SCREENSHOT | SHIFT          | CTRL        | ALT     |          |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
+// |    | RESTART    | DEBUG/CONTINUE | STEP        | STEP IN | STEP OUT |                        |    |PAGE UP |       |PAGE DOWN |       |    |
+//                   |                |             |          *         |                        |    |        |       |
                         bindings = <
-&trans      &trans          &trans  &selectword     &trans   &trans          &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
-&kp LC(F5)  &kp LG(LS(S))   &trans  &trans          &trans   &trans          &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
-&kp LS(F5)  &kp LS(LC(F5))  &kp F5  &kp F10         &kp F11  &kp LS(F11)     &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
+&trans  &trans          &trans  &selectword     &trans   &trans          &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
+&trans  &kp LG(LS(S))   &trans  &trans          &trans   &trans          &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
+&trans  &kp LS(LC(F5))  &kp F5  &kp F10         &kp F11  &kp LS(F11)     &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
                                     &trans          &trans   &trans          &trans  &trans          &trans
                         >;
                 };
                 l_bluetooth {
                         //https://zmk.dev/docs/behaviors/bluetooth
 // -----------------------------------------------------------------------------------------
-// |TRAVEL TOG  |    |    |    |    |    |                        |    |       |       |      |     |       |
-// |            |    |    |    |    |    |                        |    |       |       |      |     |       |
-// |            |    |    |    |    |    |                        |    | SEL 0 | SEL 1 | SEL2 |  *  | CLEAR |
-//                        |    |    |    |                        |    |       |       |
+// |TRAVEL TOG  |TRAVEL TOG  |    |    |    |    |                        |    |       |       |      |       |       |
+// |            |            |    |    |    |    |                        |    |       |       |      | CLEAR |       |
+// |            |            |    |    |    |    |                        |    | SEL 0 | SEL 1 | SEL2 |   *   |      |
+//                                |    |    |    |                        |    |       |       |
                         bindings = <
-&tog L_TRAVEL   &trans  &trans  &trans  &trans  &trans          &trans  &trans          &trans           &trans         &trans  &trans
-&trans          &trans  &trans  &trans  &trans  &trans          &trans  &trans          &trans           &trans         &trans  &trans
-&trans          &trans  &trans  &trans  &trans  &trans          &trans  &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2   &trans  &bt BT_CLR
+&tog L_TRAVEL   &tog L_TRAVEL  &trans  &trans  &trans  &trans          &trans  &trans          &trans           &trans         &trans      &trans
+&trans          &trans         &trans  &trans  &trans  &trans          &trans  &trans          &trans           &trans         &bt BT_CLR  &trans
+&trans          &trans         &trans  &trans  &trans  &trans          &trans  &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2   &trans      &trans
                                 &trans  &trans  &trans          &trans  &trans  &trans
                         >;
                 };
@@ -188,12 +188,12 @@
 // |    |    | (  | +  | )  |    |                        | DECIMAL     |  7  |  8  |  9  |BOOTLOADER | RES   |
 // |    |    | /  | -  | *  | =  |                        | BACKSPACE   |  0  |  1  |  2  |  3        |       |
 // |    |    |    |    |    |    |                        | COLON       |  4  |  5  |  6  |           |       |
-//                |    |    |    |                        |             |     |  *  |
+//                |    |    |    |                        | BOOTLOADER  | RES |  *  |
                         bindings = <
 &trans  &trans  &kp KP_LPAR     &kp KP_PLUS     &kp KP_RPAR     &trans                  &kp KP_DOT      &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &bootloader     &sys_reset
 &trans  &trans  &kp KP_DIVIDE   &kp KP_MINUS    &kp KP_MULTIPLY &kp EQUAL               &kp BACKSPACE   &kp NUMBER_0    &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &trans
 &trans  &trans  &trans          &trans          &trans          &trans                  &kp COLON       &kp NUMBER_4    &kp NUMBER_5    &kp NUMBER_6    &trans          &trans
-                                &trans          &trans          &trans                  &trans          &trans          &trans
+                                &trans          &trans          &trans                  &bootloader     &sys_reset      &trans
                         >;
                 };
                 l_vscode {
@@ -261,7 +261,6 @@
                               &none  &none  &none          &none  &none  &none
                         >;
                 };
-                //TODO: gaming/querty layer?
                 //TODO: mouse layer https://github.com/zmkfirmware/zmk/pull/778
                 //https://github.com/ftc/zmk/tree/mouse-ftc
                 l_template {
