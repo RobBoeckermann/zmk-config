@@ -280,18 +280,16 @@
         };
 };
                 //https://github.com/ftc/zmk/tree/mouse-ftc
-                l_template {
+//                l_template {
 // -----------------------------------------------------------------------------------------
 // |    |    |    |    |    |    |                        |    |    |    |    |    |    |
 // |    |    |    |    |    |    |                        |    |    |    |    |    |    |
 // |    |    |    |    |    |    |                        |    |    |    |    |    |    |
 //                |    |    |    |                        |    |    |    |
-                        bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans          &trans  &trans  &trans
-                        >;
-                };
-        };
-};
+//                        bindings = <
+//&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+//&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+//&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+//                        &trans  &trans  &trans          &trans  &trans  &trans
+//                        >;
+//                };
