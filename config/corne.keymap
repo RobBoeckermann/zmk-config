@@ -9,6 +9,7 @@
 #include <dt-bindings/zmk/bt.h> //https://zmk.dev/docs/behaviors/bluetooth
 #include <dt-bindings/zmk/ext_power.h> //https://zmk.dev/docs/behaviors/power
 #include <dt-bindings/zmk/outputs.h> //https://zmk.dev/docs/behaviors/outputs
+#include <dt-bindings/zmk/mouse.h> //https://zmk.dev/docs/behaviors/mouse-emulation
 
 #define L_DEFAULT       0
 #define L_SHIFT         1
@@ -22,6 +23,7 @@
 #define L_MEDIA         9
 #define L_TRAVEL       10
 #define L_TRAVELER     11
+#define L_MOUSE        12
 
 &mt {
     tapping-term-ms = <200>; //default: 200
@@ -112,9 +114,9 @@
 // | GUI |  j  |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  |     |
 //                   | LTL | LTM | LTR |                                        | RTL | RTM | RTR |
                         bindings = <
-&kp ESC         &lt L_MEDIA Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F   &kp Z               &none
-&kp MINUS       &lt L_WINDOWS Y &mt LSHFT I     &mt LCTRL E             &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &kp N   &kp B               &kp SEMICOLON
-&kp LGUI        &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P   &lt L_BLUETOOTH V   &mo L_BLUETOOTH
+&kp ESC         &lt L_MEDIA Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F           &kp Z               &none
+&kp MINUS       &lt L_WINDOWS Y &mt LSHFT I     &mt LCTRL E             &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &lt L_MOUSE N   &kp B               &kp SEMICOLON
+&kp LGUI        &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P           &lt L_BLUETOOTH V   &mo L_BLUETOOTH
                                                 &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &kp DELETE      &lt L_SYMBOLS SPACE     &lt L_NUMPAD ENTER
                         >;
                 };
@@ -262,7 +264,21 @@
                               &none  &none  &none          &none  &none  &none
                         >;
                 };
-                //TODO: mouse layer https://github.com/zmkfirmware/zmk/pull/778
+                l_mouse {
+// -----------------------------------------------------------------------------------------
+// |    |    |    |    |    |    |                        |    |            |             |     |    |    |
+// |    |    |    |    |    |    |                        |    | LEFT CLICK | RIGHT CLICK |  *  |    |    |
+// |    |    |    |    |    |    |                        |    |            |             |     |    |    |
+//                |    |    |    |                        |    |    |    |
+                        bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans     &trans     &trans  &trans  &trans
+                        &trans  &trans  &trans          &trans  &trans  &trans
+                        >;
+                };
+        };
+};
                 //https://github.com/ftc/zmk/tree/mouse-ftc
                 l_template {
 // -----------------------------------------------------------------------------------------
