@@ -32,7 +32,7 @@
 &lt {
     tapping-term-ms = <200>; //default: 200
     flavor = "hold-preferred"; //default: tap-preferred
-    quick-tap-ms = <200>; //allows backspace to be held by tapping and holding
+    //quick-tap-ms = <200>; //allows backspace to be held by tapping and holding
     //FIXME: backspacing, followed by a hold (for the shift layer) behaves as a double backspace
 };
 
@@ -116,7 +116,7 @@
                         bindings = <
 &kp ESC         &lt L_MEDIA Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F           &kp Z               &none
 &kp MINUS       &lt L_WINDOWS Y &mt LSHFT I     &mt LCTRL E             &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &lt L_MOUSE N   &kp B               &kp SEMICOLON
-&kp LGUI        &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P           &lt L_BLUETOOTH V   &mo L_BLUETOOTH
+&kp LGUI        &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P           &lt L_BLUETOOTH V   &none
                                                 &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &kp DELETE      &lt L_SYMBOLS SPACE     &lt L_NUMPAD ENTER
                         >;
                 };
