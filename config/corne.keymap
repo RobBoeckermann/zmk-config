@@ -135,12 +135,12 @@
                 };
                 l_function {
 // -----------------------------------------------------------------------------------------
-// |RES |BOOTLOADER     |       |CLOSE TAB              |NEW TAB        |SAVE        |               |F10|F7 |F8 |F9 |   |   |
+// |    |               |       |CLOSE TAB              |NEW TAB        |SAVE        |               |F10|F7 |F8 |F9 |   |   |
 // |    |LINE COMMENT   |UNDO   |COPY                   |PASTE          |REDO        |               |F11|   |F1 |F2 |F3 |   |
 // |    |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |            |               |F12|F4 |F5 |F6 |   |   |
 //                              |           *           | RES           | BOOTLOADER |               |   |   |   |
                         bindings = <
-&sys_reset  &bootloader     &trans          &ht LC(LS(T)) LC(W)     &kp LC(T)               &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
+&trans      &trans          &trans          &ht LC(LS(T)) LC(W)     &kp LC(T)               &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
 &trans      &kp LC(SLASH)   &kp LC(Z)       &ht LC(X) LC(C)         &td_paste               &kp LC(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
 &trans      &kp LA(LS(A))   &kp LC(F)       &kp LC(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
                                             &trans                  &sys_reset              &bootloader             &trans  &trans  &trans
@@ -162,14 +162,14 @@
                 l_bluetooth {
                         //https://zmk.dev/docs/behaviors/bluetooth
 // -----------------------------------------------------------------------------------------
-// |TRAVEL TOG  |TRAVEL TOG  |    |    |    |    |                        |    | USB   | BLE   |      | CLEAR ALL |       |
-// |            |            |    |    |    |    |                        |    |       |       |      | CLEAR     |       |
-// |            |            |    |    |    |    |                        |    | SEL 0 | SEL 1 | SEL2 |   *       |      |
-//                                |    |    |    |                        |    |       |       |
+// |   |TRAVEL TOG  |    |    |    |    |                        |    | USB   | BLE   |      | CLEAR ALL |       |
+// |   |            |    |    |    |    |                        |    |       |       |      | CLEAR     |       |
+// |   |            |    |    |    |    |                        |    | SEL 0 | SEL 1 | SEL2 |   *       |      |
+//                       |    |    |    |                        |    |       |       |
                         bindings = <
-&tog L_TRAVEL   &tog L_TRAVEL  &trans  &trans  &trans  &trans          &trans  &out OUT_USB    &out OUT_BLE     &trans         &bt BT_CLR_ALL   &trans
-&trans          &trans         &trans  &trans  &trans  &trans          &trans  &trans          &trans           &trans         &bt BT_CLR       &trans
-&trans          &trans         &trans  &trans  &trans  &trans          &trans  &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2   &trans           &trans
+&trans   &tog L_TRAVEL  &trans  &trans  &trans  &trans          &trans  &out OUT_USB    &out OUT_BLE     &trans         &bt BT_CLR_ALL   &trans
+&trans   &trans         &trans  &trans  &trans  &trans          &trans  &trans          &trans           &trans         &bt BT_CLR       &trans
+&trans   &trans         &trans  &trans  &trans  &trans          &trans  &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2   &trans           &trans
                                 &trans  &trans  &trans          &trans  &trans  &trans
                         >;
                 };
@@ -188,13 +188,13 @@
                 };
                 l_numpad {
 // -----------------------------------------------------------------------------------------
-// |    |    | (  | +  | )  |    |                        | DECIMAL     |  7  |  8  |  9  |BOOTLOADER | RES   |
-// |    | =  | /  | -  | *  | .  |                        | BACKSPACE   |  0  |  1  |  2  |  3        |       |
-// |    |    | :  |    |    |    |                        | COLON       |  4  |  5  |  6  |           |       |
+// |    |    | (  | +  | )  |    |                        | PERIOD      |  7  |  8  |  9  |     |    |
+// |    | =  | /  | -  | *  | .  |                        | BACKSPACE   |  0  |  1  |  2  |  3  |    |
+// |    |    | :  |    |    |    |                        | COLON       |  4  |  5  |  6  |     |    |
 //                |    |    |    |                        | BOOTLOADER  | RES |  *  |
                         bindings = <
-&trans  &trans     &kp KP_LPAR     &kp KP_PLUS     &kp KP_RPAR     &trans                  &kp KP_DOT      &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &bootloader     &sys_reset
-&trans  &kp EQUAL  &kp KP_DIVIDE   &kp KP_MINUS    &kp KP_MULTIPLY &kp KP_DOT              &kp BACKSPACE   &kp NUMBER_0    &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &trans
+&trans  &trans     &kp KP_LPAR     &kp KP_PLUS     &kp KP_RPAR     &trans                  &kp PERIOD      &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &trans          &trans
+&trans  &kp EQUAL  &kp KP_DIVIDE   &kp KP_MINUS    &kp KP_MULTIPLY &kp PERIOD              &kp BACKSPACE   &kp NUMBER_0    &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &trans
 &trans  &trans     &kp COLON       &trans          &trans          &trans                  &kp COLON       &kp NUMBER_4    &kp NUMBER_5    &kp NUMBER_6    &trans          &trans
                                    &trans          &trans          &trans                  &bootloader     &sys_reset      &trans
                         >;
@@ -240,27 +240,27 @@
                 };
                 l_travel {
 // -----------------------------------------------------------------------------------------
-// |    |    |    |    |    |    |                        |    |    |    |    |    |           |
-// |    |    |    |    |    |    |                        |    |    |    |    |    |           |
-// |    |    |    |    |    |    |                        |    |    |    |    |    | TRAVELER  |
+// |    |    |    |    |    |    |                        |    |    |    |    |          |    |
+// |    |    |    |    |    |    |                        |    |    |    |    |          |    |
+// |    |    |    |    |    |    |                        |    |    |    |    | TRAVELER |    |
 //                |    |    |    |                        |    |    |    |
                         bindings = <
-&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &mo L_TRAVELER
+&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none           &none
+&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none           &none
+&none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &mo L_TRAVELER  &none
                      &none  &none  &none          &none  &none  &none
                         >;
                 };
                 l_traveler {
 // -----------------------------------------------------------------------------------------
-// |TRAVEL TOG  |    |    |    |    |    |                        |    |    |    |    |    |      |
-// |            |    |    |    |    |    |                        |    |    |    |    |    |      |
-// |            |    |    |    |    |    |                        |    |    |    |    |    |      |
-//                        |    |    |    |                        |    |    |    |
+// |    | TRAVEL TOG   |    |    |    |    |                        |    |    |    |    |     |      |
+// |    |              |    |    |    |    |                        |    |    |    |    |     |      |
+// |    |              |    |    |    |    |                        |    |    |    |    |  *  |      |
+//                          |    |    |    |                        |    |    |    |
                         bindings = <
-&tog L_TRAVEL   &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
-&none           &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
-&none           &none  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
+&none   &tog L_TRAVEL  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
+&none   &none          &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
+&none   &none          &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
                               &none  &none  &none          &none  &none  &none
                         >;
                 };
