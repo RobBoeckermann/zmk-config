@@ -189,14 +189,14 @@
                 l_numpad {
 // -----------------------------------------------------------------------------------------
 // |    |    | (  | +  | )  |    |                        | DECIMAL     |  7  |  8  |  9  |BOOTLOADER | RES   |
-// |    |    | /  | -  | *  | =  |                        | BACKSPACE   |  0  |  1  |  2  |  3        |       |
-// |    |    |    |    |    |    |                        | COLON       |  4  |  5  |  6  |           |       |
+// |    | =  | /  | -  | *  | .  |                        | BACKSPACE   |  0  |  1  |  2  |  3        |       |
+// |    |    | :  |    |    |    |                        | COLON       |  4  |  5  |  6  |           |       |
 //                |    |    |    |                        | BOOTLOADER  | RES |  *  |
                         bindings = <
-&trans  &trans  &kp KP_LPAR     &kp KP_PLUS     &kp KP_RPAR     &trans                  &kp KP_DOT      &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &bootloader     &sys_reset
-&trans  &trans  &kp KP_DIVIDE   &kp KP_MINUS    &kp KP_MULTIPLY &kp EQUAL               &kp BACKSPACE   &kp NUMBER_0    &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &trans
-&trans  &trans  &trans          &trans          &trans          &trans                  &kp COLON       &kp NUMBER_4    &kp NUMBER_5    &kp NUMBER_6    &trans          &trans
-                                &trans          &trans          &trans                  &bootloader     &sys_reset      &trans
+&trans  &trans     &kp KP_LPAR     &kp KP_PLUS     &kp KP_RPAR     &trans                  &kp KP_DOT      &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &bootloader     &sys_reset
+&trans  &kp EQUAL  &kp KP_DIVIDE   &kp KP_MINUS    &kp KP_MULTIPLY &kp KP_DOT              &kp BACKSPACE   &kp NUMBER_0    &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &trans
+&trans  &trans     &kp COLON       &trans          &trans          &trans                  &kp COLON       &kp NUMBER_4    &kp NUMBER_5    &kp NUMBER_6    &trans          &trans
+                                   &trans          &trans          &trans                  &bootloader     &sys_reset      &trans
                         >;
                 };
                 l_vscode {
