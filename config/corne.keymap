@@ -70,6 +70,24 @@
                         tapping-term-ms = <200>;
                         bindings = <&ht C_PREV C_VOLUME_DOWN>, <&kp C_VOLUME_DOWN>;
                 };
+                b_semicolon: b_semicolon {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp B>, <&kp SEMICOLON>;
+                        mods = <(MOD_LALT)>;
+                };
+                y_minus: y_minus {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp Y>, <&kp MINUS>;
+                        mods = <(MOD_LALT)>;
+                };
+                q_escape: q_escape {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp Q>, <&kp ESC>;
+                        mods = <(MOD_LALT)>;
+                };
         };
 
         macros {
@@ -109,102 +127,105 @@
 
                 l_default {
 // -----------------------------------------------------------------------------------------
-// | ESC |  q  |  h  |  o  |  u  |  x  |                                        |  g  |  c  |  r  |  f  |  z  |     |
-// |  -  |  y  |  i  |  e  |  a  |  .  |                                        |  d  |  s  |  t  |  n  |  b  |  ;  |
-// | GUI |  j  |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  |     |
-//                   | LTL | LTM | LTR |                                        | RTL | RTM | RTR |
+// | q/ESC |  h  |  o  |  u  |  x  |                                        |  g  |  c  |  r  |  f  |  z  |
+// |  y/-  |  i  |  e  |  a  |  .  |                                        |  d  |  s  |  t  |  n  | b/; |
+// |   j   |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  |
+//       | ENTER | BACKSPACE | TAB |                                        | DELETE | SPACE |
                         bindings = <
-&kp ESC         &lt L_MEDIA Q   &kp H           &kp O                   &kp U                   &kp X                           &kp G           &kp C                   &kp R                   &kp F           &kp Z               &none
-&kp MINUS       &lt L_WINDOWS Y &mt LSHFT I     &mt LCTRL E             &mt LALT A              &kp PERIOD                      &kp D           &kp S                   &kp T                   &lt L_MOUSE N   &kp B               &kp SEMICOLON
-&kp LGUI        &lt L_VSCODE J  &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W           &kp M                   &kp L                   &kp P           &lt L_BLUETOOTH V   &none
-                                                &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &kp DELETE      &lt L_SYMBOLS SPACE     &lt L_NUMPAD ENTER
+&none       &lt L_MEDIA q_escape        &kp H           &kp O                   &kp U                   &kp X                           &kp G                   &kp C                   &kp R                   &kp F           &kp Z               &none
+&none       &lt L_WINDOWS y_minus       &mt LSHFT I     &mt LCTRL E             &mt LALT A              &mt LGUI PERIOD                 &mt LGUI D              &mt LALT S              &mt LCTRL T             &lt L_MOUSE N   &b_semicolon        &none
+&none       &lt L_VSCODE J              &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W                   &kp M                   &kp L                   &kp P           &lt L_BLUETOOTH V   &none
+                                                        &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &lt L_NUMPAD DELETE     &lt L_SYMBOLS SPACE     &none
                         >;
                 };
                 l_shift {
 // -----------------------------------------------------------------------------------------
-// |     |  Q  |  H  |  O  |  U  |  X  |                                        |  G  |  C  |  R  |  F  |  Z  |    |
-// |     |  Y  |  I  |  E  |  A  |  @  |                                        |  D  |  S  |  T  |  N  |  B  |    |
-// |     |  J  |  ?  |  !  |  K  |  `  |                                        |  W  |  M  |  L  |  P  |  V  |    |
-//                   |     |  *  |     |                                        |     |     |     |
+// |  Q  |  H  |  O  |  U  |  X  |                                        |  G  |  C  |  R  |  F  |  Z  |
+// |  Y  |  I  |  E  |  A  |  @  |                                        |  D  |  S  |  T  |  N  |  B  |
+// |  J  |  ?  |  !  |  K  |  `  |                                        |  W  |  M  |  L  |  P  |  V  |
+//             |     |  *  |     |                                        |     |     |
                         bindings = <
 &trans  &kp LS(Q)       &kp LS(H)       &kp LS(O)       &kp LS(U)       &kp LS(X)               &kp LS(G)       &kp LS(C)       &kp LS(R)       &kp LS(F)       &kp LS(Z)       &trans
 &trans  &kp LS(Y)       &kp LS(I)       &kp LS(E)       &kp LS(A)       &kp AT                  &kp LS(D)       &kp LS(S)       &kp LS(T)       &kp LS(N)       &kp LS(B)       &trans
 &trans  &kp LS(J)       &kp QMARK       &kp EXCL        &kp LS(K)       &kp GRAVE               &kp LS(W)       &kp LS(M)       &kp LS(L)       &kp LS(P)       &kp LS(V)       &trans
-                                        &trans          &trans          &trans                  &trans          &trans          &trans
+                                        &trans          &trans          &trans                  &trans          &trans          &none
                         >;
                 };
                 l_function {
 // -----------------------------------------------------------------------------------------
-// |    |               |       |CLOSE TAB              |NEW TAB        |SAVE        |               |F10|F7 |F8 |F9 |   |   |
-// |    |LINE COMMENT   |UNDO   |COPY                   |PASTE          |REDO        |               |F11|   |F1 |F2 |F3 |   |
-// |    |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |            |               |F12|F4 |F5 |F6 |   |   |
-//                              |           *           | RES           | BOOTLOADER |               |   |   |   |
+// |               |       |CLOSE TAB              |NEW TAB        |SAVE        |               |F10|F7 |F8 |F9 |   |
+// |LINE COMMENT   |UNDO   |COPY                   |PASTE          |REDO        |               |F11|   |F1 |F2 |F3 |
+// |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |            |               |F12|F4 |F5 |F6 |   |
+//                         |           *           |               |            |               |   |   |
                         bindings = <
 &trans      &trans          &trans          &ht LC(LS(T)) LC(W)     &kp LC(T)               &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
 &trans      &kp LC(SLASH)   &kp LC(Z)       &ht LC(X) LC(C)         &td_paste               &kp LC(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
 &trans      &kp LA(LS(A))   &kp LC(F)       &kp LC(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
-                                            &trans                  &sys_reset              &bootloader             &trans  &trans  &trans
+                                            &trans                  &trans                  &trans                  &trans  &trans  &none
                         >;
                 };
                 l_arrows {
 // -----------------------------------------------------------------------------------------
-// |    |            |                | SELECT WORD |         |          |                        |    |HOME    |UP     |END       |       |    |
-// |    | SCREENSHOT | SHIFT          | CTRL        | ALT     |          |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |    |
-// |    | RESTART    | DEBUG/CONTINUE | STEP        | STEP IN | STEP OUT |                        |    |PAGE UP |       |PAGE DOWN |       |    |
-//                   |                |             |          *         |                        |    |        |       |
+// | RESET      |                | SELECT WORD |         |          |                        |    |HOME    |UP     |END       |       |
+// | SCREENSHOT | SHIFT          | CTRL        | ALT     |          |                        |    |LEFT    |DOWN   |RIGHT     |INSERT |
+// | RESTART    | DEBUG/CONTINUE | STEP        | STEP IN | STEP OUT |                        |    |PAGE UP |       |PAGE DOWN |       |
+//                               |             | BOOT    |     *    |                        |    |        |
                         bindings = <
-&trans  &trans          &trans  &selectword     &trans   &trans          &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
-&trans  &kp LG(LS(S))   &trans  &trans          &trans   &trans          &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
-&trans  &kp LS(LC(F5))  &kp F5  &kp F10         &kp F11  &kp LS(F11)     &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
-                                    &trans          &trans   &trans          &trans  &trans          &trans
+&trans  &RESET          &trans  &selectword     &trans        &trans                  &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
+&trans  &kp LG(LS(S))   &trans  &trans          &trans        &trans                  &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
+&trans  &kp LS(LC(F5))  &kp F5  &kp F10         &kp F11       &kp LS(F11)             &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
+                                &trans          &BOOTLOADER   &trans                  &trans  &trans          &none
                         >;
                 };
-                l_bluetooth {
+
+                l_bluetooth 
+                {
                         //https://zmk.dev/docs/behaviors/bluetooth
 // -----------------------------------------------------------------------------------------
-// |   |TRAVEL TOG  |    |    |    |    |                        |    | USB   | BLE   |      | CLEAR ALL |       |
-// |   |            |    |    |    |    |                        |    |       |       |      | CLEAR     |       |
-// |   |            |    |    |    |    |                        |    | SEL 0 | SEL 1 | SEL2 |   *       |      |
-//                       |    |    |    |                        |    |       |       |
+// |TRAVEL TOG  |    |    |    |    |                        |    | USB   | BLE   |      | CLEAR ALL |
+// |            |    |    |    |    |                        |    |       |       |      | CLEAR     |
+// |            |    |    |    |    |                        |    | SEL 0 | SEL 1 | SEL2 |   *       |
+//                   |    |    |    |                        |    |       |
                         bindings = <
 &trans   &tog L_TRAVEL  &trans  &trans  &trans  &trans          &trans  &out OUT_USB    &out OUT_BLE     &trans         &bt BT_CLR_ALL   &trans
 &trans   &trans         &trans  &trans  &trans  &trans          &trans  &trans          &trans           &trans         &bt BT_CLR       &trans
 &trans   &trans         &trans  &trans  &trans  &trans          &trans  &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2   &trans           &trans
-                                &trans  &trans  &trans          &trans  &trans  &trans
+                                &trans  &trans  &trans          &trans  &trans  &none
                         >;
                 };
+
                 l_symbols {
 // -----------------------------------------------------------------------------------------
-// |    |     |  <  |  $  |  >  |     |                        |     |  [  |  _  |  ]  |     |    |
-// |    |  \  |  (  |  "  |  )  |  #  |                        |  %  |  {  |  =  |  }  |  |  |    |
-// |    |     |  :  |  *  |  +  |     |                        |     |  &  |  ^  |  ~  |     |    |
-//                  |     |     |     |                        |     |  *  |     |
+// |     |  <  |  $  |  >  |     |                        |     |  [  |  _  |  ]  |     |
+// |  \  |  (  |  "  |  )  |  #  |                        |  %  |  {  |  =  |  }  |  |  |
+// |     |  :  |  *  |  +  |     |                        |     |  &  |  ^  |  ~  |     |
+//             |     |     |     |                        |     |  *  |
                         bindings = <
 &trans  &trans          &kp LESS_THAN           &kp DOLLAR              &kp GREATER_THAN        &trans                  &trans          &kp LEFT_BRACKET        &kp UNDERSCORE  &kp RIGHT_BRACKET       &trans          &trans
 &trans  &kp BACKSLASH   &kp LEFT_PARENTHESIS    &kp DOUBLE_QUOTES       &kp RIGHT_PARENTHESIS   &kp POUND               &kp PERCENT     &kp LEFT_BRACE          &kp EQUAL       &kp RIGHT_BRACE         &kp PIPE        &trans
 &trans  &trans          &kp COLON               &kp ASTERISK            &kp PLUS                &trans                  &trans          &kp AMPERSAND           &kp CARET       &kp TILDE               &trans          &trans
-                                                &trans                  &trans                  &trans                  &trans          &trans                  &trans
+                                                &trans                  &trans                  &trans                  &trans          &trans                  &none
                         >;
                 };
                 l_numpad {
 // -----------------------------------------------------------------------------------------
-// |    |    | (  | +  | )  |    |                        | PERIOD      |  7  |  8  |  9  |     |    |
-// |    | =  | /  | -  | *  | .  |                        | BACKSPACE   |  0  |  1  |  2  |  3  |    |
-// |    |    | :  |    |    |    |                        | COLON       |  4  |  5  |  6  |     |    |
-//                |    |    |    |                        | BOOTLOADER  | RES |  *  |
+// |    | (  | +  | )  |    |                        | PERIOD      |  7  |  8  |  9  | RESET |
+// | =  | /  | -  | *  | .  |                        | BACKSPACE   |  0  |  1  |  2  |  3    |
+// |    | :  |    |    |    |                        | COLON       |  4  |  5  |  6  |       |
+//           |    |    |    |                        |      *      | BOOT|
                         bindings = <
-&trans  &trans     &kp KP_LPAR     &kp KP_PLUS     &kp KP_RPAR     &trans                  &kp PERIOD      &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &trans          &trans
+&trans  &trans     &kp KP_LPAR     &kp KP_PLUS     &kp KP_RPAR     &trans                  &kp PERIOD      &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &RESET          &trans
 &trans  &kp EQUAL  &kp KP_DIVIDE   &kp KP_MINUS    &kp KP_MULTIPLY &kp PERIOD              &kp BACKSPACE   &kp NUMBER_0    &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &trans
 &trans  &trans     &kp COLON       &trans          &trans          &trans                  &kp COLON       &kp NUMBER_4    &kp NUMBER_5    &kp NUMBER_6    &trans          &trans
-                                   &trans          &trans          &trans                  &bootloader     &sys_reset      &trans
+                                   &trans          &trans          &trans                  &trans          &bootloader     &none
                         >;
                 };
                 l_vscode {
 // -----------------------------------------------------------------------------------------
-// |    |     |peef def          |references     |implementations        |    |                        |    |    |    |    |    |    |
-// |    |     |back              |def            |forward                |    |                        |    |    |    |    |    |    |
-// |    |  *  |prev bookmark     |bookmark       |next bookmark          |    |                        |    |    |    |    |    |    |
-//                               |               |                       |    |                        |    |    |    |
+// |     |peef def          |references     |implementations        |    |                        |    |    |    |    |    |
+// |     |back              |def            |forward                |    |                        |    |    |    |    |    |
+// |  *  |prev bookmark     |bookmark       |next bookmark          |    |                        |    |    |    |    |    |
+//                          |               |                       |    |                        |    |    |
                         bindings = <
 &trans  &trans  &kp LA(F12)     &references                        &kp LC(F12)             &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LA(LEFT)    &kp F12                            &kp LA(RIGHT)           &trans          &trans  &trans  &trans  &trans  &trans  &trans
@@ -214,10 +235,10 @@
                 };
                 l_windows {
 // -----------------------------------------------------------------------------------------
-// |    |     |VD left           |window up      |VD right       |new VD         |                        |    |    | BRIGHTNESS UP    |    |    |    |
-// |    |  *  |window left       |window down    |window right   |exit VD        |                        |    |    | BRIGHTNESS DOWN  |    |    |    |
-// |    |     |                  |               |               |               |                        |    |    |    |    |    |    |
-//                               |monitor left   |task view      |monitor right  |                        |    |    |    |
+// |     |VD left           |window up      |VD right       |new VD         |                        |    |    | BRIGHTNESS UP    |    |    |
+// |  *  |window left       |window down    |window right   |exit VD        |                        |    |    | BRIGHTNESS DOWN  |    |    |
+// |     |                  |               |               |               |                        |    |    |    |    |    |
+//                          |monitor left   |task view      |monitor right  |                        |    |    |
                         bindings = <
 &trans  &trans  &kp LG(LC(LEFT))        &kp LG(UP)      &kp LG(LC(RIGHT))       &kp LG(LC(D))           &trans  &trans  &kp C_BRI_INC  &trans  &trans  &trans
 &trans  &trans  &kp LG(LEFT)            &kp LG(DOWN)    &kp LG(RIGHT)           &kp LG(LC(F4))          &trans  &trans  &kp C_BRI_DEC  &trans  &trans  &trans
@@ -227,10 +248,10 @@
                 };
                 l_media {
 // -----------------------------------------------------------------------------------------
-// |    |   *   |VOL DOWN / PREV  |VOL UP / NEXT  |PLAY PAUSE / MUTE  |    |                        |    |    |    |    |    |    |
-// |    |       |                 |               |                   |    |                        |    |    |    |    |    |    |
-// |    |       |                 |               |                   |    |                        |    |    |    |    |    |    |
-//                                |               |                   |    |                        |    |    |    |
+// |   *   |VOL DOWN / PREV  |VOL UP / NEXT  |PLAY PAUSE / MUTE  |    |                        |    |    |    |    |    |
+// |       |                 |               |                   |    |                        |    |    |    |    |    |
+// |       |                 |               |                   |    |                        |    |    |    |    |    |
+//                           |               |                   |    |                        |    |    |
                         bindings = <
 &trans  &trans  &td_volume_down  &td_volume_up  &ht C_MUTE C_PLAY_PAUSE  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans           &trans         &trans                   &trans          &trans  &trans  &trans  &trans  &trans  &trans
@@ -240,10 +261,10 @@
                 };
                 l_travel {
 // -----------------------------------------------------------------------------------------
-// |    |    |    |    |    |    |                        |    |    |    |    |          |    |
-// |    |    |    |    |    |    |                        |    |    |    |    |          |    |
-// |    |    |    |    |    |    |                        |    |    |    |    | TRAVELER |    |
-//                |    |    |    |                        |    |    |    |
+// |    |    |    |    |    |                        |    |    |    |    |          |
+// |    |    |    |    |    |                        |    |    |    |    |          |
+// |    |    |    |    |    |                        |    |    |    |    | TRAVELER |
+//           |    |    |    |                        |    |    |
                         bindings = <
 &none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none           &none
 &none  &none  &none  &none  &none  &none          &none  &none  &none  &none  &none           &none
@@ -253,10 +274,10 @@
                 };
                 l_traveler {
 // -----------------------------------------------------------------------------------------
-// |    | TRAVEL TOG   |    |    |    |    |                        |    |    |    |    |     |      |
-// |    |              |    |    |    |    |                        |    |    |    |    |     |      |
-// |    |              |    |    |    |    |                        |    |    |    |    |  *  |      |
-//                          |    |    |    |                        |    |    |    |
+// | TRAVEL TOG   |    |    |    |    |                        |    |    |    |    |     |
+// |              |    |    |    |    |                        |    |    |    |    |     |
+// |              |    |    |    |    |                        |    |    |    |    |  *  |
+//                     |    |    |    |                        |    |    |
                         bindings = <
 &none   &tog L_TRAVEL  &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
 &none   &none          &none  &none  &none  &none          &none  &none  &none  &none  &none  &none
@@ -266,10 +287,10 @@
                 };
                 l_mouse {
 // -----------------------------------------------------------------------------------------
-// |    |    |    |    |    |    |                        |    |            |             |     |    |    |
-// |    |    |    |    |    |    |                        |    | LEFT CLICK | RIGHT CLICK |  *  |    |    |
-// |    |    |    |    |    |    |                        |    |            |             |     |    |    |
-//                |    |    |    |                        |    |    |    |
+// |    |    |    |    |    |                        |    |            |             |     |    |
+// |    |    |    |    |    |                        |    | LEFT CLICK | RIGHT CLICK |  *  |    |
+// |    |    |    |    |    |                        |    |            |             |     |    |
+//           |    |    |    |                        |    |    |
                         bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
@@ -282,10 +303,10 @@
                 //https://github.com/ftc/zmk/tree/mouse-ftc
 //                l_template {
 // -----------------------------------------------------------------------------------------
-// |    |    |    |    |    |    |                        |    |    |    |    |    |    |
-// |    |    |    |    |    |    |                        |    |    |    |    |    |    |
-// |    |    |    |    |    |    |                        |    |    |    |    |    |    |
-//                |    |    |    |                        |    |    |    |
+// |    |    |    |    |    |                        |    |    |    |    |    |
+// |    |    |    |    |    |                        |    |    |    |    |    |
+// |    |    |    |    |    |                        |    |    |    |    |    |
+//           |    |    |    |                        |    |    |
 //                        bindings = <
 //&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 //&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
