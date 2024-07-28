@@ -161,7 +161,7 @@
 // |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |            |               |F12|F4 |F5 |F6 |   |
 //                         |           *           |               |            |               |   |   |
                         bindings = <
-&kp ESC     &trans          &trans          &ht LC(LS(T)) LC(W)     &kp LC(T)               &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
+&trans      &kp ESC          &trans          &ht LC(LS(T)) LC(W)     &kp LC(T)               &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
 &trans      &kp LC(SLASH)   &kp LC(Z)       &ht LC(X) LC(C)         &td_paste               &kp LC(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
 &trans      &kp LA(LS(A))   &kp LC(F)       &kp LC(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
                                             &trans                  &trans                  &trans                  &trans  &trans  &none
