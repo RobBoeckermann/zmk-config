@@ -185,7 +185,7 @@
 // | RESTART    | DEBUG/CONTINUE | STEP        | STEP IN | STEP OUT |                        |    |PAGE UP |       |PAGE DOWN |       |
 //                               |             | BOOT    |     *    |                        |    |        |
                         bindings = <
-&trans  &RESET          &trans  &selectword     &trans        &trans                  &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
+&trans  &sys_reset          &trans  &selectword     &trans        &trans                  &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
 &trans  &kp LG(LS(S))   &trans  &trans          &trans        &trans                  &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
 &trans  &kp LS(LC(F5))  &kp F5  &kp F10         &kp F11       &kp LS(F11)             &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
                                 &trans          &BOOTLOADER   &trans                  &trans  &trans          &none
@@ -228,7 +228,7 @@
 // |    | :  |    |    |    |                        | COLON       |  4  |  5  |  6  |       |
 //           |    |    |    |                        |      *      | BOOT|
                         bindings = <
-&trans  &trans     &kp KP_LPAR     &kp KP_PLUS     &kp KP_RPAR     &trans                  &kp PERIOD      &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &RESET          &trans
+&trans  &trans     &kp KP_LPAR     &kp KP_PLUS     &kp KP_RPAR     &trans                  &kp PERIOD      &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &sys_reset          &trans
 &trans  &kp EQUAL  &kp KP_DIVIDE   &kp KP_MINUS    &kp KP_MULTIPLY &kp PERIOD              &kp BACKSPACE   &kp NUMBER_0    &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &trans
 &trans  &trans     &kp COLON       &trans          &trans          &trans                  &kp COLON       &kp NUMBER_4    &kp NUMBER_5    &kp NUMBER_6    &trans          &trans
                                    &trans          &trans          &trans                  &trans          &bootloader     &none
