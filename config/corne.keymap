@@ -188,7 +188,7 @@
 &trans  &sys_reset          &trans  &selectword     &trans        &trans                  &trans  &kp HOME        &kp UP          &kp END         &trans          &trans
 &trans  &kp LG(LS(S))   &trans  &trans          &trans        &trans                  &trans  &kp LEFT        &kp DOWN        &kp RIGHT       &kp INSERT      &trans
 &trans  &kp LS(LC(F5))  &kp F5  &kp F10         &kp F11       &kp LS(F11)             &trans  &kp PG_UP       &trans          &kp PG_DN       &trans          &trans
-                                &trans          &BOOTLOADER   &trans                  &trans  &trans          &none
+                                &trans          &bootloader   &trans                  &trans  &trans          &none
                         >;
                 };
 
