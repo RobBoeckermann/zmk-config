@@ -91,20 +91,6 @@
                         bindings = <&mo>, <&y_minus>;
                         tapping-term-ms = <200>;
                 };
-                q_escape: q_escape {
-                        compatible = "zmk,behavior-mod-morph";
-                        #binding-cells = <0>;
-                        bindings = <&kp Q>, <&kp ESC>;
-                        mods = <(MOD_RCTL)>;
-                        keep-mods = <(MOD_LCTL)>;
-                };
-                lt_q_escape: lt_q_escape {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "LT_Q_ESCAPE";
-                        #binding-cells = <2>;
-                        bindings = <&mo>, <&q_escape>;
-                        tapping-term-ms = <200>;
-                };
         };
 
         macros {
@@ -144,12 +130,12 @@
 
                 l_default {
 // -----------------------------------------------------------------------------------------
-// | q/ESC |  h  |  o  |  u  |  x  |                                        |  g  |  c  |  r  |  f  |  z  |
+// |   q   |  h  |  o  |  u  |  x  |                                        |  g  |  c  |  r  |  f  |  z  |
 // |  y/-  |  i  |  e  |  a  |  .  |                                        |  d  |  s  |  t  |  n  | b/; |
 // |   j   |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  |
 //       | ENTER | BACKSPACE | TAB |                                        | DELETE | SPACE |
                         bindings = <
-&none       &lt_q_escape L_MEDIA 0      &kp H           &kp O                   &kp U                   &kp X                           &kp G                   &kp C                   &kp R                   &kp F           &kp Z               &kt LCTRL
+&none       &lt L_MEDIA Q               &kp H           &kp O                   &kp U                   &kp X                           &kp G                   &kp C                   &kp R                   &kp F           &kp Z               &kt LCTRL
 &none       &lt_y_minus L_WINDOWS 0     &mt LSHFT I     &mt LCTRL E             &mt LALT A              &mt LGUI PERIOD                 &mt RGUI D              &mt RALT S              &mt RCTRL T             &lt L_MOUSE N   &b_semicolon        &none
 &none       &lt L_VSCODE J              &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W                   &kp M                   &kp L                   &kp P           &lt L_BLUETOOTH V   &none
                                                         &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &lt L_NUMPAD DELETE     &lt L_SYMBOLS SPACE     &none
@@ -170,12 +156,12 @@
                 };
                 l_function {
 // -----------------------------------------------------------------------------------------
-// |               |       |CLOSE TAB              |NEW TAB        |SAVE        |               |F10|F7 |F8 |F9 |   |
+// |ESC            |       |CLOSE TAB              |NEW TAB        |SAVE        |               |F10|F7 |F8 |F9 |   |
 // |LINE COMMENT   |UNDO   |COPY                   |PASTE          |REDO        |               |F11|   |F1 |F2 |F3 |
 // |BLOCK COMMENT  |FIND   |FIND IN SOLUTION       |               |            |               |F12|F4 |F5 |F6 |   |
 //                         |           *           |               |            |               |   |   |
                         bindings = <
-&trans      &trans          &trans          &ht LC(LS(T)) LC(W)     &kp LC(T)               &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
+&kp ESC     &trans          &trans          &ht LC(LS(T)) LC(W)     &kp LC(T)               &kp LC(S)               &kp F10 &kp F7  &kp F8  &kp F9  &trans  &trans
 &trans      &kp LC(SLASH)   &kp LC(Z)       &ht LC(X) LC(C)         &td_paste               &kp LC(LS(Z))           &kp F11 &trans  &kp F1  &kp F2  &kp F3  &trans
 &trans      &kp LA(LS(A))   &kp LC(F)       &kp LC(LS(F))           &trans                  &trans                  &kp F12 &kp F4  &kp F5  &kp F6  &trans  &trans
                                             &trans                  &trans                  &trans                  &trans  &trans  &none
