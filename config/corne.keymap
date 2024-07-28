@@ -88,6 +88,13 @@
                         bindings = <&kp Q>, <&kp ESC>;
                         mods = <(MOD_LALT)>;
                 };
+                lt_q_escape: lt_q_escape {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "LT_Q_ESCAPE";
+                        #binding-cells = <2>;
+                        bindings = <&mo>, <&q_escape>;
+                        tapping-term-ms = <200>;
+                };
         };
 
         macros {
@@ -132,7 +139,7 @@
 // |   j   |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  |
 //       | ENTER | BACKSPACE | TAB |                                        | DELETE | SPACE |
                         bindings = <
-&none       &lt L_MEDIA q_escape        &kp H           &kp O                   &kp U                   &kp X                           &kp G                   &kp C                   &kp R                   &kp F           &kp Z               &kt LCTRL
+&none       &lt_q_escape L_MEDIA 0      &kp H           &kp O                   &kp U                   &kp X                           &kp G                   &kp C                   &kp R                   &kp F           &kp Z               &kt LCTRL
 &none       &lt L_WINDOWS y_minus       &mt LSHFT I     &mt LCTRL E             &mt LALT A              &mt LGUI PERIOD                 &mt LGUI D              &mt LALT S              &mt LCTRL T             &lt L_MOUSE N   &b_semicolon        &none
 &none       &lt L_VSCODE J              &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W                   &kp M                   &kp L                   &kp P           &lt L_BLUETOOTH V   &none
                                                         &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &lt L_NUMPAD DELETE     &lt L_SYMBOLS SPACE     &none
