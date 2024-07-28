@@ -80,7 +80,7 @@
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
                         bindings = <&kp Y>, <&kp MINUS>;
-                        mods = <(MOD_LALT)>;
+                        mods = <(MOD_LALT|MOD_LSFT|MOD_LCTL)>;
                 };
                 lt_y_minus: lt_y_minus {
                         compatible = "zmk,behavior-hold-tap";
@@ -93,7 +93,7 @@
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
                         bindings = <&kp Q>, <&kp ESC>;
-                        mods = <(MOD_LALT)>;
+                        mods = <(MOD_LALT|MOD_LSFT|MOD_LCTL)>;
                 };
                 lt_q_escape: lt_q_escape {
                         compatible = "zmk,behavior-hold-tap";
