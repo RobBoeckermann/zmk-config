@@ -74,13 +74,15 @@
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
                         bindings = <&kp B>, <&kp SEMICOLON>;
-                        mods = <(MOD_LALT)>;
+                        mods = <(MOD_LCTL)>;
+                        keep-mods = <(MOD_RCTL)>;
                 };
                 y_minus: y_minus {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
                         bindings = <&kp Y>, <&kp MINUS>;
-                        mods = <(MOD_LALT|MOD_LSFT|MOD_LCTL)>;
+                        mods = <(MOD_RCTL)>;
+                        keep-mods = <(MOD_LCTL)>;
                 };
                 lt_y_minus: lt_y_minus {
                         compatible = "zmk,behavior-hold-tap";
@@ -93,7 +95,8 @@
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
                         bindings = <&kp Q>, <&kp ESC>;
-                        mods = <(MOD_LALT|MOD_LSFT|MOD_LCTL)>;
+                        mods = <(MOD_RCTL)>;
+                        keep-mods = <(MOD_LCTL)>;
                 };
                 lt_q_escape: lt_q_escape {
                         compatible = "zmk,behavior-hold-tap";
@@ -147,7 +150,7 @@
 //       | ENTER | BACKSPACE | TAB |                                        | DELETE | SPACE |
                         bindings = <
 &none       &lt_q_escape L_MEDIA 0      &kp H           &kp O                   &kp U                   &kp X                           &kp G                   &kp C                   &kp R                   &kp F           &kp Z               &kt LCTRL
-&none       &lt_y_minus L_WINDOWS 0     &mt LSHFT I     &mt LCTRL E             &mt LALT A              &mt LGUI PERIOD                 &mt LGUI D              &mt LALT S              &mt LCTRL T             &lt L_MOUSE N   &b_semicolon        &none
+&none       &lt_y_minus L_WINDOWS 0     &mt LSHFT I     &mt LCTRL E             &mt LALT A              &mt LGUI PERIOD                 &mt RGUI D              &mt RALT S              &mt RCTRL T             &lt L_MOUSE N   &b_semicolon        &none
 &none       &lt L_VSCODE J              &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W                   &kp M                   &kp L                   &kp P           &lt L_BLUETOOTH V   &none
                                                         &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &lt L_NUMPAD DELETE     &lt L_SYMBOLS SPACE     &none
                         >;
