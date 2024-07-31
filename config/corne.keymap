@@ -91,6 +91,20 @@
                         bindings = <&mo>, <&y_minus>;
                         tapping-term-ms = <200>;
                 };
+                space_enter: space_enter {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp SPACE>, <&kp ENTER>;
+                        mods = <(MOD_RCTL)|(MOD_RCTL)>;
+                        keep-mods = 0;
+                };
+                lt_space_enter: lt_space_enter {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "LT_SPACE_ENTER";
+                        #binding-cells = <2>;
+                        bindings = <&mo>, <&space_enter>;
+                        tapping-term-ms = <200>;
+                };
         };
 
         macros {
@@ -135,10 +149,10 @@
 // |   j   |  /  |  ,  |  k  |  '  |                                        |  w  |  m  |  l  |  p  |  v  |
 //       | ENTER | BACKSPACE | TAB |                                        | DELETE | SPACE |
                         bindings = <
-&none       &lt L_MEDIA Q               &kp H           &kp O                   &kp U                   &kp X                           &kp G                   &kp C                   &kp R                   &kp F           &kp Z               &kt LCTRL
-&none       &lt_y_minus L_WINDOWS 0     &mt LSHFT I     &mt LCTRL E             &mt LALT A              &mt LGUI PERIOD                 &mt RGUI D              &mt RALT S              &mt RCTRL T             &lt L_MOUSE N   &b_semicolon        &none
-&none       &lt L_VSCODE J              &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W                   &kp M                   &kp L                   &kp P           &lt L_BLUETOOTH V   &none
-                                                        &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &lt L_NUMPAD DELETE     &lt L_SYMBOLS SPACE     &none
+&none       &lt L_MEDIA Q               &kp H           &kp O                   &kp U                   &kp X                           &kp G                   &kp C                           &kp R                   &kp F           &kp Z               &kt LCTRL
+&none       &lt_y_minus L_WINDOWS 0     &mt LSHFT I     &mt LCTRL E             &mt LALT A              &mt LGUI PERIOD                 &mt RGUI D              &mt RALT S                      &mt RCTRL T             &lt L_MOUSE N   &b_semicolon        &none
+&none       &lt L_VSCODE J              &kp SLASH       &kp COMMA               &kp K                   &kp APOSTROPHE                  &kp W                   &kp M                           &kp L                   &kp P           &lt L_BLUETOOTH V   &none
+                                                        &lt L_FUNCTION ENTER    &lt L_SHIFT BACKSPACE   &lt L_ARROWS TAB                &lt L_NUMPAD DELETE     &lt_space_enter L_SYMBOLS 0     &none
                         >;
                 };
                 l_shift {
