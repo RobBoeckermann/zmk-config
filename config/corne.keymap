@@ -95,7 +95,7 @@
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
                         bindings = <&kp SPACE>, <&kp ENTER>;
-                        mods = <(MOD_RCTL)|(MOD_RCTL)>;
+                        mods = <(MOD_RCTL|MOD_RCTL)>;
                         keep-mods = 0;
                 };
                 lt_space_enter: lt_space_enter {
